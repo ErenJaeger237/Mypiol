@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "254084640633",
+    "project_id": "my-piol-cedckq",
+    "storage_bucket": "my-piol-cedckq.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254084640633:android:d6830cd7133e941db589a8",
+        "android_client_info": {
+          "package_name": "com.flutterflow.homeU"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZkPCcrIiwR5aoUsPMpkUR7PKNwQOqCLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
