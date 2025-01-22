@@ -190,6 +190,8 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -384,7 +386,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                               ).animateOnPageLoad(
@@ -405,7 +407,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -457,7 +459,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -475,7 +477,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 12.0,
                                         letterSpacing: 0.0,
@@ -501,7 +503,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
@@ -528,7 +530,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -554,7 +556,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: FlutterFlowTheme.of(context)
                                         .primaryText,
                                     fontSize: 12.0,
@@ -914,7 +916,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              font: GoogleFonts.urbanist(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -1084,7 +1086,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                                                           Text(
                                                                             rowUsersRecord.displayName,
                                                                             style: FlutterFlowTheme.of(context).headlineSmall.override(
-                                                                                  fontFamily: 'Urbanist',
+                                                                                  font: GoogleFonts.urbanist(),
                                                                                   letterSpacing: 0.0,
                                                                                 ),
                                                                           ),
@@ -1168,7 +1170,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                                                           style: FlutterFlowTheme.of(context)
                                                                               .bodySmall
                                                                               .override(
-                                                                                fontFamily: 'Lexend Deca',
+                                                                                font: GoogleFonts.lexendDeca(),
                                                                                 color: Color(0xFF8B97A2),
                                                                                 fontSize: 14.0,
                                                                                 letterSpacing: 0.0,
@@ -1303,7 +1305,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       letterSpacing: 0.0,
@@ -1314,12 +1316,12 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                     4.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'tg8lj6js' /* + taxes/fees */,
+                                    'tg8lj6js' /* +fees */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -1334,12 +1336,12 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                 0.0, 4.0, 0.0, 0.0),
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'w7754s79' /* per night */,
+                                'w7754s79' /* per month */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1366,7 +1368,7 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                             );
                           },
                           text: FFLocalizations.of(context).getText(
-                            'e1lg573k' /* Book Now */,
+                            'e1lg573k' /* Place an offer */,
                           ),
                           options: FFButtonOptions(
                             width: 130.0,
@@ -1375,11 +1377,11 @@ class _PropertyDetailsWidgetState extends State<PropertyDetailsWidget>
                                 0.0, 0.0, 0.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: Color(0xFF4B39EF),
+                            color: Color(0xFFF88605),
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Lexend Deca',
+                                  font: GoogleFonts.lexendDeca(),
                                   color: Colors.white,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,

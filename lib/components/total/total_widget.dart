@@ -28,6 +28,8 @@ class _TotalWidgetState extends State<TotalWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TotalModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -82,7 +84,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                     'q6cmjvox' /* Order Total */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Urbanist',
+                        font: GoogleFonts.urbanist(),
                         color: FlutterFlowTheme.of(context).dark600,
                         letterSpacing: 0.0,
                       ),
@@ -95,7 +97,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                     'o8wn4y0a' /* Your order total is a summary ... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Urbanist',
+                        font: GoogleFonts.urbanist(),
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
@@ -119,7 +121,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).cultured,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                         ),

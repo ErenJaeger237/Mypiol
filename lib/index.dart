@@ -20,8 +20,6 @@ export '/pages/change_password/change_password_widget.dart'
     show ChangePasswordWidget;
 export '/pages/create_property_1/create_property1_widget.dart'
     show CreateProperty1Widget;
-export '/pages/home_page_a_l_t/home_page_a_l_t_widget.dart'
-    show HomePageALTWidget;
 export '/pages/create_property_2/create_property2_widget.dart'
     show CreateProperty2Widget;
 export '/pages/create_property_3/create_property3_widget.dart'

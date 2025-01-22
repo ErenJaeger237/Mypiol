@@ -19,34 +19,30 @@ class CreateProperty2Model extends FlutterFlowModel<CreateProperty2Widget> {
   bool? amenityPoolValue;
   // Model for amenitityIndicator component.
   late AmenitityIndicatorModel amenitityIndicatorModel2;
-  // State field(s) for amenity_EVCharging widget.
-  bool? amenityEVChargingValue;
-  // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel3;
   // State field(s) for amenity_ExtraOutlets widget.
   bool? amenityExtraOutletsValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel4;
+  late AmenitityIndicatorModel amenitityIndicatorModel3;
   // State field(s) for amenity_AC widget.
   bool? amenityACValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel5;
+  late AmenitityIndicatorModel amenitityIndicatorModel4;
   // State field(s) for amenity_Heating widget.
   bool? amenityHeatingValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel6;
+  late AmenitityIndicatorModel amenitityIndicatorModel5;
   // State field(s) for amenity_Washer widget.
   bool? amenityWasherValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel7;
+  late AmenitityIndicatorModel amenitityIndicatorModel6;
   // State field(s) for amenity_Dryer widget.
   bool? amenityDryerValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel8;
+  late AmenitityIndicatorModel amenitityIndicatorModel7;
   // State field(s) for amenity_Pets widget.
   bool? amenityPetsValue;
   // Model for amenitityIndicator component.
-  late AmenitityIndicatorModel amenitityIndicatorModel9;
+  late AmenitityIndicatorModel amenitityIndicatorModel8;
   // State field(s) for amenity_Workout widget.
   bool? amenityWorkoutValue;
 
@@ -68,8 +64,6 @@ class CreateProperty2Model extends FlutterFlowModel<CreateProperty2Widget> {
         createModel(context, () => AmenitityIndicatorModel());
     amenitityIndicatorModel8 =
         createModel(context, () => AmenitityIndicatorModel());
-    amenitityIndicatorModel9 =
-        createModel(context, () => AmenitityIndicatorModel());
   }
 
   @override
@@ -82,6 +76,5 @@ class CreateProperty2Model extends FlutterFlowModel<CreateProperty2Widget> {
     amenitityIndicatorModel6.dispose();
     amenitityIndicatorModel7.dispose();
     amenitityIndicatorModel8.dispose();
-    amenitityIndicatorModel9.dispose();
   }
 }

@@ -31,6 +31,8 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
 
     _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -99,14 +101,14 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                             if (!(Theme.of(context).brightness ==
                                 Brightness.dark))
                               Image.asset(
-                                'assets/images/logoUpHome_dark@3x.png',
+                                'assets/images/Design_sans_titre.png',
                                 width: 200.0,
                                 height: 60.0,
                                 fit: BoxFit.fitWidth,
                               ),
                             if (Theme.of(context).brightness == Brightness.dark)
                               Image.asset(
-                                'assets/images/logoUpHome@3x.png',
+                                'assets/images/Design_sans_titre.png',
                                 width: 200.0,
                                 height: 60.0,
                                 fit: BoxFit.fitWidth,
@@ -128,7 +130,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -155,7 +157,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -164,7 +166,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -206,7 +208,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model
@@ -237,7 +239,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -246,7 +248,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -302,7 +304,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model
@@ -354,7 +356,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Colors.white,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
@@ -373,60 +375,48 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 16.0, 0.0, 24.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  20.0, 0.0, 0.0, 0.0),
-                              child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'xh4ondm7' /* Already have an account? */,
-                                ),
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyMedium
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                            ),
-                            FFButtonWidget(
-                              onPressed: () async {
-                                context.pushNamed('login');
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'gtd52sxd' /* Login */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 90.0,
-                                height: 30.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: Color(0x00FFFFFF),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Lexend Deca',
-                                      color: Color(0xFF39D2C0),
-                                      fontSize: 14.0,
-                                      letterSpacing: 0.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(0.0),
-                              ),
-                            ),
-                          ],
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'xh4ondm7' /* Already have an account? */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    font: GoogleFonts.urbanist(),
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ),
+                      FFButtonWidget(
+                        onPressed: () async {
+                          context.pushNamed('login');
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'jg7stujv' /* Login */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 90.0,
+                          height: 30.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: Color(0x00FFFFFF),
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    font: GoogleFonts.lexendDeca(),
+                                    color: Color(0xFF39D2C0),
+                                    fontSize: 14.0,
+                                    letterSpacing: 0.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(0.0),
                         ),
                       ),
                     ],

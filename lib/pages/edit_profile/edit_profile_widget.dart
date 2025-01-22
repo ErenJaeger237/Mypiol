@@ -4,6 +4,7 @@ import '/components/change_photo/change_photo_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,8 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
     _model.myBioTextController ??=
         TextEditingController(text: widget!.userProfile?.bio);
     _model.myBioFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -104,7 +107,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                 '3vj25wo1' /* Edit Profile */,
               ),
               style: FlutterFlowTheme.of(context).titleSmall.override(
-                    fontFamily: 'Urbanist',
+                    font: GoogleFonts.urbanist(),
                     letterSpacing: 0.0,
                   ),
             ),
@@ -130,16 +133,62 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       child: Padding(
                         padding: EdgeInsets.all(2.0),
-                        child: Container(
-                          width: 90.0,
-                          height: 90.0,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.network(
-                            widget!.userProfile!.photoUrl,
-                            fit: BoxFit.fitWidth,
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            final selectedMedia =
+                                await selectMediaWithSourceBottomSheet(
+                              context: context,
+                              allowPhoto: true,
+                            );
+                            if (selectedMedia != null &&
+                                selectedMedia.every((m) => validateFileFormat(
+                                    m.storagePath, context))) {
+                              safeSetState(() => _model.isDataUploading = true);
+                              var selectedUploadedFiles = <FFUploadedFile>[];
+
+                              try {
+                                selectedUploadedFiles = selectedMedia
+                                    .map((m) => FFUploadedFile(
+                                          name: m.storagePath.split('/').last,
+                                          bytes: m.bytes,
+                                          height: m.dimensions?.height,
+                                          width: m.dimensions?.width,
+                                          blurHash: m.blurHash,
+                                        ))
+                                    .toList();
+                              } finally {
+                                _model.isDataUploading = false;
+                              }
+                              if (selectedUploadedFiles.length ==
+                                  selectedMedia.length) {
+                                safeSetState(() {
+                                  _model.uploadedLocalFile =
+                                      selectedUploadedFiles.first;
+                                });
+                              } else {
+                                safeSetState(() {});
+                                return;
+                              }
+                            }
+
+                            FFAppState().avatar = '';
+                            safeSetState(() {});
+                          },
+                          child: Container(
+                            width: 90.0,
+                            height: 90.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.network(
+                              widget!.userProfile!.photoUrl,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
                         ),
                       ),
@@ -183,7 +232,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           color: FlutterFlowTheme.of(context).lineGray,
                           textStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -213,7 +262,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       labelStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       hintText: FFLocalizations.of(context).getText(
@@ -221,7 +270,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       hintStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -259,7 +308,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           letterSpacing: 0.0,
                         ),
                     validator:
@@ -279,7 +328,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       labelStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       hintText: FFLocalizations.of(context).getText(
@@ -287,7 +336,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       hintStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -325,7 +374,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           letterSpacing: 0.0,
                         ),
                     validator: _model.emailAddressTextControllerValidator
@@ -345,7 +394,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       labelStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       hintText: FFLocalizations.of(context).getText(
@@ -353,7 +402,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                       ),
                       hintStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -391,7 +440,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                     ),
                     style: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           letterSpacing: 0.0,
                         ),
                     textAlign: TextAlign.start,
@@ -425,10 +474,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFFF88605),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Lexend Deca',
+                                  font: GoogleFonts.lexendDeca(),
                                   color: Colors.white,
                                   fontSize: 16.0,
                                   letterSpacing: 0.0,

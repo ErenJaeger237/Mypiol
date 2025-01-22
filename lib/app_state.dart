@@ -56,6 +56,13 @@ class FFAppState extends ChangeNotifier {
     _zipCode = value;
     prefs.setString('ff_zipCode', value);
   }
+
+  String _avatar =
+      'https://www.bing.com/images/search?view=detailV2&ccid=hZAW1qjM&id=C08F5C563203D13853B0C90EAD038DF720B61E50&thid=OIP.hZAW1qjMuXkTFEdJkFcDTQHaHa&mediaurl=https%3a%2f%2fchcclynden.org%2fwp-content%2fuploads%2f2014%2f03%2fplaceholder-person.png&cdnurl=https%3a%2f%2fth.bing.com%2fth%2fid%2fR.859016d6a8ccb979131447499057034d%3frik%3dUB62IPeNA60OyQ%26pid%3dImgRaw%26r%3d0&exph=1024&expw=1024&q=placeholder+image&simid=608015959599886023&FORM=IRPRST&ck=B7B40543AF41B03A40577F2E6BCB0728&selectedIndex=5&itb=1';
+  String get avatar => _avatar;
+  set avatar(String value) {
+    _avatar = value;
+  }
 }
 
 void _safeInit(Function() initializeField) {

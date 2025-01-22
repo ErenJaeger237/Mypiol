@@ -40,6 +40,8 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TripDetailsHOSTModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,7 +78,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
             '49mk481j' /* Trip Details */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -135,7 +137,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                         'eanydtui' /* Dates of trip */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Lexend Deca',
+                            font: GoogleFonts.lexendDeca(),
                             color: FlutterFlowTheme.of(context).gray600,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
@@ -158,7 +160,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -169,7 +171,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).darkText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
@@ -184,7 +186,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -199,7 +201,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                         'aa3n3ddf' /* Destination */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            fontFamily: 'Lexend Deca',
+                            font: GoogleFonts.lexendDeca(),
                             color: FlutterFlowTheme.of(context).gray600,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
@@ -218,7 +220,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                     ),
@@ -306,7 +308,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                       widget!.propertyRef!.propertyName,
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                     ),
@@ -341,7 +343,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                             widget!.propertyRef!.propertyAddress,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -373,7 +375,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: FlutterFlowTheme.of(context).gray600,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -397,7 +399,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -414,7 +416,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -435,7 +437,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -449,7 +451,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -470,7 +472,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -484,7 +486,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -508,7 +510,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
@@ -557,7 +559,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -581,7 +583,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -614,7 +616,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Colors.white,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
@@ -701,7 +703,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -739,7 +741,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              font: GoogleFonts.urbanist(),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,

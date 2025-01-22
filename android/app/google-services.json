@@ -12,7 +12,12 @@
           "package_name": "com.flutterflow.homeU"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "254084640633-nqaaus41dl5qmakoll4ureok5bsecsdo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAZkPCcrIiwR5aoUsPMpkUR7PKNwQOqCLU"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254084640633-nqaaus41dl5qmakoll4ureok5bsecsdo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "254084640633-j1mgklae6kq4t2m95ifskps2v7s05gh0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.flutterflow.homeU"
+              }
+            }
+          ]
         }
       }
     }

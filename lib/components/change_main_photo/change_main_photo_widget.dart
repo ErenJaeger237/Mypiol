@@ -107,6 +107,8 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -175,7 +177,7 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -273,7 +275,7 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
@@ -305,10 +307,10 @@ class _ChangeMainPhotoWidgetState extends State<ChangeMainPhotoWidget>
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFFF88605),
                     textStyle:
                         FlutterFlowTheme.of(context).headlineSmall.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               color: FlutterFlowTheme.of(context).tertiary,
                               letterSpacing: 0.0,
                             ),

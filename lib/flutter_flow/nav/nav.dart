@@ -93,12 +93,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'login',
           path: '/login',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'login')
-              : NavBarPage(
-                  initialPage: 'login',
-                  page: LoginWidget(),
-                ),
+          builder: (context, params) => LoginWidget(
+            password: params.getParam(
+              'password',
+              ParamType.String,
+            ),
+          ),
         ),
         FFRoute(
           name: 'createAccount',
@@ -108,9 +108,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'homePage_MAIN',
           path: '/homePageMAIN',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'homePage_MAIN')
-              : HomePageMAINWidget(),
+              : NavBarPage(
+                  initialPage: 'homePage_MAIN',
+                  page: HomePageMAINWidget(),
+                ),
         ),
         FFRoute(
           name: 'propertyDetails',
@@ -119,29 +123,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             'propertyRef':
                 getDoc(['properties'], PropertiesRecord.fromSnapshot),
           },
-          builder: (context, params) => PropertyDetailsWidget(
-            propertyRef: params.getParam(
-              'propertyRef',
-              ParamType.Document,
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: PropertyDetailsWidget(
+              propertyRef: params.getParam(
+                'propertyRef',
+                ParamType.Document,
+              ),
             ),
           ),
         ),
         FFRoute(
           name: 'searchProperties',
           path: '/searchProperties',
-          builder: (context, params) => SearchPropertiesWidget(
-            searchTerm: params.getParam(
-              'searchTerm',
-              ParamType.String,
-            ),
-          ),
+          requireAuth: true,
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'searchProperties')
+              : SearchPropertiesWidget(
+                  searchTerm: params.getParam(
+                    'searchTerm',
+                    ParamType.String,
+                  ),
+                ),
         ),
         FFRoute(
           name: 'myTrips',
           path: '/myTrips',
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'myTrips')
-              : MyTripsWidget(),
+              : NavBarPage(
+                  initialPage: 'myTrips',
+                  page: MyTripsWidget(),
+                ),
         ),
         FFRoute(
           name: 'tripDetails',
@@ -165,6 +178,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'propertyReview',
           path: '/propertyReview',
+          requireAuth: true,
           asyncParams: {
             'propertyRef':
                 getDoc(['properties'], PropertiesRecord.fromSnapshot),
@@ -193,9 +207,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'profilePage',
           path: '/profilePage',
+          requireAuth: true,
           builder: (context, params) => params.isEmpty
               ? NavBarPage(initialPage: 'profilePage')
-              : ProfilePageWidget(),
+              : NavBarPage(
+                  initialPage: 'profilePage',
+                  page: ProfilePageWidget(),
+                ),
         ),
         FFRoute(
           name: 'paymentInfo',
@@ -208,10 +226,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           asyncParams: {
             'userProfile': getDoc(['users'], UsersRecord.fromSnapshot),
           },
-          builder: (context, params) => EditProfileWidget(
-            userProfile: params.getParam(
-              'userProfile',
-              ParamType.Document,
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: EditProfileWidget(
+              userProfile: params.getParam(
+                'userProfile',
+                ParamType.Document,
+              ),
             ),
           ),
         ),
@@ -221,10 +242,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           asyncParams: {
             'userProfile': getDoc(['users'], UsersRecord.fromSnapshot),
           },
-          builder: (context, params) => ChangePasswordWidget(
-            userProfile: params.getParam(
-              'userProfile',
-              ParamType.Document,
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: ChangePasswordWidget(
+              userProfile: params.getParam(
+                'userProfile',
+                ParamType.Document,
+              ),
             ),
           ),
         ),
@@ -232,11 +256,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'createProperty_1',
           path: '/createProperty1',
           builder: (context, params) => CreateProperty1Widget(),
-        ),
-        FFRoute(
-          name: 'HomePage_ALT',
-          path: '/homePageALT',
-          builder: (context, params) => HomePageALTWidget(),
         ),
         FFRoute(
           name: 'createProperty_2',
@@ -275,7 +294,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'myProperties',
           path: '/myProperties',
-          builder: (context, params) => MyPropertiesWidget(),
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: MyPropertiesWidget(),
+          ),
         ),
         FFRoute(
           name: 'propertyDetails_Owner',
@@ -294,11 +316,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'myBookings',
           path: '/myBookings',
-          builder: (context, params) => MyBookingsWidget(),
+          builder: (context, params) => NavBarPage(
+            initialPage: '',
+            page: MyBookingsWidget(),
+          ),
         ),
         FFRoute(
           name: 'tripDetailsHOST',
           path: '/tripDetailsHOST',
+          requireAuth: true,
           asyncParams: {
             'propertyRef':
                 getDoc(['properties'], PropertiesRecord.fromSnapshot),
@@ -549,8 +575,8 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/splashScreen@2x.png',
-                    fit: BoxFit.cover,
+                    'assets/images/Design_sans_titre.png',
+                    fit: BoxFit.contain,
                   ),
                 )
               : page;

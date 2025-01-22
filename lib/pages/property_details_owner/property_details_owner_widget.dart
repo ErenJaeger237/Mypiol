@@ -74,6 +74,8 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -227,7 +229,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -246,7 +248,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                             widget!.propertyRef!.propertyNeighborhood,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -298,7 +300,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -316,7 +318,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -340,7 +342,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -362,7 +364,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -386,7 +388,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -696,7 +698,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -866,7 +868,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall
                                                                             .override(
-                                                                              fontFamily: 'Urbanist',
+                                                                              font: GoogleFonts.urbanist(),
                                                                               letterSpacing: 0.0,
                                                                             ),
                                                                       ),
@@ -959,8 +961,8 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                                                                               context)
                                                                           .bodyMedium
                                                                           .override(
-                                                                            fontFamily:
-                                                                                'Urbanist',
+                                                                            font:
+                                                                                GoogleFonts.urbanist(),
                                                                             letterSpacing:
                                                                                 0.0,
                                                                           ),
@@ -1089,7 +1091,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
                                   letterSpacing: 0.0,
@@ -1105,7 +1107,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1124,7 +1126,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodySmall.override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -1162,7 +1164,7 @@ class _PropertyDetailsOwnerWidgetState extends State<PropertyDetailsOwnerWidget>
                       color: FlutterFlowTheme.of(context).secondary,
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                fontFamily: 'Lexend Deca',
+                                font: GoogleFonts.lexendDeca(),
                                 color: Colors.white,
                                 fontSize: 16.0,
                                 letterSpacing: 0.0,

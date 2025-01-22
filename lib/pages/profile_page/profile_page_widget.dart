@@ -70,6 +70,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -130,14 +132,47 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(2.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(60.0),
-                            child: Image.network(
-                              columnUsersRecord.photoUrl,
-                              width: 80.0,
-                              height: 80.0,
-                              fit: BoxFit.cover,
+                          child: StreamBuilder<List<UserdetailRecord>>(
+                            stream: queryUserdetailRecord(
+                              singleRecord: true,
                             ),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: CircularProgressIndicator(
+                                      valueColor: AlwaysStoppedAnimation<Color>(
+                                        FlutterFlowTheme.of(context).primary,
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              List<UserdetailRecord>
+                                  userAvatarUserdetailRecordList =
+                                  snapshot.data!;
+                              // Return an empty Container when the item does not exist.
+                              if (snapshot.data!.isEmpty) {
+                                return Container();
+                              }
+                              final userAvatarUserdetailRecord =
+                                  userAvatarUserdetailRecordList.isNotEmpty
+                                      ? userAvatarUserdetailRecordList.first
+                                      : null;
+
+                              return ClipRRect(
+                                borderRadius: BorderRadius.circular(60.0),
+                                child: Image.network(
+                                  columnUsersRecord.photoUrl,
+                                  width: 80.0,
+                                  height: 80.0,
+                                  fit: BoxFit.cover,
+                                ),
+                              );
+                            },
                           ),
                         ),
                       ),
@@ -158,7 +193,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Colors.white,
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
@@ -169,11 +204,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 4.0, 0.0, 0.0),
                                 child: Text(
-                                  columnUsersRecord.email,
+                                  currentUserEmail,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 14.0,
@@ -243,7 +278,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Outfit',
+                                        font: GoogleFonts.outfit(),
                                         color: Colors.white,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -359,7 +394,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Outfit',
+                                      font: GoogleFonts.outfit(),
                                       color: Colors.white,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -474,7 +509,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -551,7 +586,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -633,7 +668,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -727,7 +762,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -816,7 +851,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              font: GoogleFonts.urbanist(),
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -840,7 +875,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              fontFamily: 'Urbanist',
+                                              font: GoogleFonts.urbanist(),
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
@@ -931,7 +966,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            font: GoogleFonts.urbanist(),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -977,9 +1012,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                    color: Color(0xFFF91515),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Lexend Deca',
+                          font: GoogleFonts.lexendDeca(),
                           color: FlutterFlowTheme.of(context).darkText,
                           fontSize: 16.0,
                           letterSpacing: 0.0,
@@ -1023,10 +1058,10 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary,
+                        color: Color(0xFFF88605),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

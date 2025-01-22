@@ -34,6 +34,8 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EditProperty2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -69,7 +71,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
             'j49n3nla' /* Edit Property */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -104,7 +106,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color:
                                           FlutterFlowTheme.of(context).gray600,
                                       letterSpacing: 0.0,
@@ -150,7 +152,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -206,7 +208,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -262,7 +264,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -318,7 +320,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -374,7 +376,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -430,7 +432,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -486,7 +488,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -542,7 +544,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -583,7 +585,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -594,7 +596,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -617,7 +619,7 @@ class _EditProperty2WidgetState extends State<EditProperty2Widget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

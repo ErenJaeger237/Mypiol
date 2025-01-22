@@ -8,6 +8,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
 
+import '/backend/supabase/supabase.dart';
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
@@ -23,6 +24,8 @@ void main() async {
   usePathUrlStrategy();
 
   await initFirebase();
+
+  await SupaFlow.initialize();
 
   await FlutterFlowTheme.initialize();
 
@@ -53,6 +56,14 @@ class _MyAppState extends State<MyApp> {
 
   late AppStateNotifier _appStateNotifier;
   late GoRouter _router;
+  String getRoute([RouteMatch? routeMatch]) {
+    final RouteMatch lastMatch =
+        routeMatch ?? _router.routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : _router.routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 
   late Stream<BaseAuthUser> userStream;
 
@@ -148,8 +159,8 @@ class _NavBarPageState extends State<NavBarPage> {
   @override
   Widget build(BuildContext context) {
     final tabs = {
-      'login': LoginWidget(),
       'homePage_MAIN': HomePageMAINWidget(),
+      'searchProperties': SearchPropertiesWidget(),
       'myTrips': MyTripsWidget(),
       'profilePage': ProfilePageWidget(),
     };
@@ -186,7 +197,7 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  currentIndex == 0 ? Icons.home : Icons.home_outlined,
+                  currentIndex == 0 ? Icons.home_rounded : Icons.home_outlined,
                   color: currentIndex == 0
                       ? Color(0xFFF88605)
                       : FlutterFlowTheme.of(context).grayIcon,
@@ -194,7 +205,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'ytv9sl16' /* Home */,
+                    'q1x85q9v' /* Home */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -212,15 +223,15 @@ class _NavBarPageState extends State<NavBarPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  currentIndex == 1 ? Icons.home_rounded : Icons.home_outlined,
+                  Icons.search_rounded,
                   color: currentIndex == 1
                       ? Color(0xFFF88605)
                       : FlutterFlowTheme.of(context).grayIcon,
-                  size: currentIndex == 1 ? 24.0 : 24.0,
+                  size: 24.0,
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'q1x85q9v' /* Home */,
+                    'kln4qn8m' /* Search */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
@@ -246,7 +257,7 @@ class _NavBarPageState extends State<NavBarPage> {
                 ),
                 Text(
                   FFLocalizations.of(context).getText(
-                    'fblutesr' /* My Trips */,
+                    'fblutesr' /* My oders */,
                   ),
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(

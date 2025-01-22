@@ -32,7 +32,8 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
     super.initState();
     _model = createModel(context, () => CreateProperty1Model());
 
-    _model.propertyNameTextController ??= TextEditingController();
+    _model.propertyNameTextController ??= TextEditingController(
+        text: (_model.propertyNameFocusNode?.hasFocus ?? false).toString());
     _model.propertyNameFocusNode ??= FocusNode();
 
     _model.propertyAddressTextController ??= TextEditingController();
@@ -43,6 +44,8 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
 
     _model.propertyDescriptionTextController ??= TextEditingController();
     _model.propertyDescriptionFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -79,7 +82,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
             '3xac5xvp' /* Create Property */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -173,19 +176,51 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           color: Color(0xFFEEEEEE),
                           borderRadius: BorderRadius.circular(16.0),
                         ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(16.0),
-                          child: CachedNetworkImage(
-                            fadeInDuration: Duration(milliseconds: 500),
-                            fadeOutDuration: Duration(milliseconds: 500),
-                            imageUrl: valueOrDefault<String>(
-                              _model.uploadedFileUrl,
-                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/lhbo8hbkycdw/addCoverImage@2x.png',
-                            ),
-                            width: double.infinity,
-                            height: 180.0,
-                            fit: BoxFit.cover,
+                        child: StreamBuilder<List<PropertiesRecord>>(
+                          stream: queryPropertiesRecord(
+                            singleRecord: true,
                           ),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50.0,
+                                  height: 50.0,
+                                  child: CircularProgressIndicator(
+                                    valueColor: AlwaysStoppedAnimation<Color>(
+                                      FlutterFlowTheme.of(context).primary,
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }
+                            List<PropertiesRecord> imagePropertiesRecordList =
+                                snapshot.data!;
+                            // Return an empty Container when the item does not exist.
+                            if (snapshot.data!.isEmpty) {
+                              return Container();
+                            }
+                            final imagePropertiesRecord =
+                                imagePropertiesRecordList.isNotEmpty
+                                    ? imagePropertiesRecordList.first
+                                    : null;
+
+                            return ClipRRect(
+                              borderRadius: BorderRadius.circular(16.0),
+                              child: CachedNetworkImage(
+                                fadeInDuration: Duration(milliseconds: 500),
+                                fadeOutDuration: Duration(milliseconds: 500),
+                                imageUrl: valueOrDefault<String>(
+                                  _model.uploadedFileUrl,
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/lhbo8hbkycdw/addCoverImage@2x.png',
+                                ),
+                                width: double.infinity,
+                                height: 180.0,
+                                fit: BoxFit.cover,
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
@@ -202,7 +237,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -225,7 +260,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -276,7 +311,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                         validator: _model.propertyNameTextControllerValidator
@@ -296,7 +331,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -319,7 +354,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
@@ -369,7 +404,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                         validator: _model.propertyAddressTextControllerValidator
@@ -389,7 +424,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -412,7 +447,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
@@ -462,7 +497,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                         validator: _model
@@ -483,7 +518,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -505,7 +540,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: UnderlineInputBorder(
@@ -552,7 +587,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                               0.0, 24.0, 0.0, 24.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                         maxLines: 4,
@@ -579,7 +614,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -590,7 +625,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -719,7 +754,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

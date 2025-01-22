@@ -76,6 +76,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -138,7 +140,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                 'nk2l4o2a' /* Reviews */,
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    fontFamily: 'Urbanist',
+                    font: GoogleFonts.urbanist(),
                     letterSpacing: 0.0,
                   ),
             ),
@@ -191,7 +193,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 28.0,
@@ -207,7 +209,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF95A1AC),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -233,7 +235,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            font: GoogleFonts.lexendDeca(),
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 28.0,
@@ -260,7 +262,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -384,8 +386,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Urbanist',
+                                                                  font: GoogleFonts
+                                                                      .urbanist(),
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -479,8 +481,8 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),

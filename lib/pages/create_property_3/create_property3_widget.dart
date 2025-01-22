@@ -1,11 +1,13 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_count_controller.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_property3_model.dart';
@@ -33,6 +35,11 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
     super.initState();
     _model = createModel(context, () => CreateProperty3Model());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      context.pushNamed('propertyDetails_Owner');
+    });
+
     _model.pricePerNightTextController ??= TextEditingController();
     _model.pricePerNightFocusNode ??= FocusNode();
 
@@ -41,6 +48,8 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
 
     _model.notesTextController ??= TextEditingController();
     _model.notesFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -76,7 +85,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
             'i41qcd4m' /* Create Property */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -108,7 +117,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -131,7 +140,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                               ),
@@ -181,87 +190,12 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                         validator: _model.pricePerNightTextControllerValidator
                             .asValidator(context),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Text(
-                            FFLocalizations.of(context).getText(
-                              'dygcee9z' /* MINIMUM NIGHT STAY */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodySmall
-                                .override(
-                                  fontFamily: 'Urbanist',
-                                  color: FlutterFlowTheme.of(context).gray600,
-                                  letterSpacing: 0.0,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 12.0, 0.0, 0.0),
-                          child: Container(
-                            width: 200.0,
-                            height: 50.0,
-                            decoration: BoxDecoration(
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              borderRadius: BorderRadius.circular(25.0),
-                              shape: BoxShape.rectangle,
-                              border: Border.all(
-                                color: FlutterFlowTheme.of(context).lineGray,
-                                width: 2.0,
-                              ),
-                            ),
-                            child: FlutterFlowCountController(
-                              decrementIconBuilder: (enabled) => Icon(
-                                Icons.remove_rounded,
-                                color: enabled
-                                    ? FlutterFlowTheme.of(context).secondaryText
-                                    : FlutterFlowTheme.of(context).grayIcon,
-                                size: 32.0,
-                              ),
-                              incrementIconBuilder: (enabled) => Icon(
-                                Icons.add_rounded,
-                                color: enabled
-                                    ? FlutterFlowTheme.of(context).primary
-                                    : FlutterFlowTheme.of(context).grayIcon,
-                                size: 32.0,
-                              ),
-                              countBuilder: (count) => Text(
-                                count.toString(),
-                                style: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .override(
-                                      fontFamily: 'Urbanist',
-                                      letterSpacing: 0.0,
-                                    ),
-                              ),
-                              count: _model.countControllerValue ??= 1,
-                              updateCount: (count) => safeSetState(
-                                  () => _model.countControllerValue = count),
-                              stepSize: 1,
-                              minimum: 1,
-                            ),
-                          ),
-                        ),
-                      ],
                     ),
                     Divider(
                       height: 32.0,
@@ -276,12 +210,12 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'quvcsxqn' /* CLEANING FEE */,
+                              'quvcsxqn' /* PRICING */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -304,7 +238,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
@@ -354,7 +288,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                         keyboardType: TextInputType.number,
@@ -375,7 +309,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -397,7 +331,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: UnderlineInputBorder(
@@ -444,7 +378,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                               0.0, 24.0, 0.0, 24.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                         maxLines: 4,
@@ -471,7 +405,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                           'nma74i5x' /* STEP */,
                         ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                       ),
@@ -482,15 +416,20 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                             ),
                       ),
                     ],
                   ),
                   FFButtonWidget(
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      await PropertiesRecord.collection
+                          .doc()
+                          .set(createPropertiesRecordData(
+                            propertyName: '',
+                            propertyDescription: '',
+                          ));
                     },
                     text: FFLocalizations.of(context).getText(
                       'y44q8s0q' /* PUBLISH */,
@@ -505,7 +444,7 @@ class _CreateProperty3WidgetState extends State<CreateProperty3Widget> {
                       color: FlutterFlowTheme.of(context).turquoise,
                       textStyle:
                           FlutterFlowTheme.of(context).headlineSmall.override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).tertiary,
                                 letterSpacing: 0.0,
                               ),

@@ -150,16 +150,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Welcome Back,',
       'fr': '',
     },
-    'bfanwv6c': {
-      'en': 'Email Address',
-      'fr': '',
-    },
     'es8h8sf8': {
       'en': 'Enter your email here...',
-      'fr': '',
-    },
-    'chqsoxkc': {
-      'en': 'Password',
       'fr': '',
     },
     'liaewqaa': {
@@ -180,6 +172,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6lfl0mp1': {
       'en': 'Create Account',
+      'fr': '',
+    },
+    'd7dcxbwp': {
+      'en': 'OR',
+      'fr': '',
+    },
+    '3hphc9yo': {
+      'en': 'Continue with Google',
       'fr': '',
     },
     'ytv9sl16': {
@@ -217,7 +217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Already have an account?',
       'fr': '',
     },
-    'gtd52sxd': {
+    'jg7stujv': {
       'en': 'Login',
       'fr': '',
     },
@@ -290,15 +290,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'tg8lj6js': {
-      'en': '+ taxes/fees',
+      'en': '+fees',
       'fr': '',
     },
     'w7754s79': {
-      'en': 'per night',
+      'en': 'per month',
       'fr': '',
     },
     'e1lg573k': {
-      'en': 'Book Now',
+      'en': 'Place an offer',
       'fr': '',
     },
     'm0re4g6t': {
@@ -325,7 +325,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'kln4qn8m': {
-      'en': 'Home',
+      'en': 'Search',
       'fr': '',
     },
   },
@@ -364,7 +364,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'fblutesr': {
-      'en': 'My Trips',
+      'en': 'My oders',
       'fr': '',
     },
   },
@@ -423,7 +423,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'l17myrgh': {
-      'en': 'Host Info',
+      'en': 'Owner Info',
       'fr': '',
     },
     'lmaap774': {
@@ -705,33 +705,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // HomePage_ALT
-  {
-    '0jxfse5v': {
-      'en': 'Welcome!',
-      'fr': '',
-    },
-    'iddmidim': {
-      'en': 'Find your Dream Space',
-      'fr': '',
-    },
-    'afq57oza': {
-      'en': 'Address, city, state...',
-      'fr': '',
-    },
-    'g5ie4rs6': {
-      'en': 'Search',
-      'fr': '',
-    },
-    'teqdz7k8': {
-      'en': '4/5 reviews',
-      'fr': '',
-    },
-    'cet8j0jo': {
-      'en': 'Home',
-      'fr': '',
-    },
-  },
   // createProperty_2
   {
     'i41qcd4m': {
@@ -744,10 +717,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '80li6cu2': {
       'en': 'Pool',
-      'fr': '',
-    },
-    'f25tw8h2': {
-      'en': 'EV Car Charging',
       'fr': '',
     },
     'v38ca1jp': {
@@ -809,12 +778,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'FCFA Price',
       'fr': '',
     },
-    'dygcee9z': {
-      'en': 'MINIMUM NIGHT STAY',
-      'fr': '',
-    },
     'quvcsxqn': {
-      'en': 'CLEANING FEE',
+      'en': 'PRICING',
       'fr': '',
     },
     'f3jl3hng': {
@@ -957,7 +922,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'vdoocfo9': {
-      'en': 'My Bookings',
+      'en': 'My Order',
       'fr': '',
     },
     'pwmqmr0h': {
@@ -1288,7 +1253,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // cancelTrip
   {
     '2o89tkju': {
-      'en': 'Cancel Trip',
+      'en': 'Cancel Oder',
       'fr': '',
     },
     'ced0n31o': {
@@ -1301,7 +1266,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'iqp1zal0': {
-      'en': 'Yes, Cancel Trip',
+      'en': 'Yes, Cancel Oder',
       'fr': '',
     },
     'h5gwj7ui': {
@@ -1312,7 +1277,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // cancelTripHOST
   {
     'vwav9uie': {
-      'en': 'Cancel Trip',
+      'en': 'Cancel ',
       'fr': '',
     },
     'rqf8ppmi': {
@@ -1325,7 +1290,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'xxmn8krt': {
-      'en': 'Yes, Cancel Trip',
+      'en': 'Yes, Cancel ',
       'fr': '',
     },
     '3s2js6or': {
@@ -1340,9 +1305,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     '7z5o01ux': {
-      'en': '',
+      'en': 'please garnt permission to access photos',
       'fr':
           'Pour recuperere des photos l\'application a besion de votre permission',
+    },
+    'vmaptavr': {
+      'en': 'please allow app to access notification',
+      'fr': '',
+    },
+    'c0k9dsyc': {
+      'en': 'please enable loction',
+      'fr': '',
     },
     's34de1q1': {
       'en': '',

@@ -102,6 +102,8 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -113,6 +115,8 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
       child: Container(
@@ -170,7 +174,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -180,17 +184,44 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: Image.network(
-                    valueOrDefault<String>(
-                      _model.uploadedFileUrl,
-                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/uxii7iwtqpy8/emptyAvatar@2x.png',
-                    ),
-                    width: 150.0,
-                    height: 150.0,
-                    fit: BoxFit.cover,
+                child: StreamBuilder<List<UsersRecord>>(
+                  stream: queryUsersRecord(
+                    singleRecord: true,
                   ),
+                  builder: (context, snapshot) {
+                    // Customize what your widget looks like when it's loading.
+                    if (!snapshot.hasData) {
+                      return Center(
+                        child: SizedBox(
+                          width: 50.0,
+                          height: 50.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(
+                              FlutterFlowTheme.of(context).primary,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    List<UsersRecord> imageUsersRecordList = snapshot.data!;
+                    // Return an empty Container when the item does not exist.
+                    if (snapshot.data!.isEmpty) {
+                      return Container();
+                    }
+                    final imageUsersRecord = imageUsersRecordList.isNotEmpty
+                        ? imageUsersRecordList.first
+                        : null;
+
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: Image.network(
+                        FFAppState().avatar,
+                        width: 150.0,
+                        height: 150.0,
+                        fit: BoxFit.cover,
+                      ),
+                    );
+                  },
                 ),
               ),
               Padding(
@@ -268,7 +299,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          fontFamily: 'Urbanist',
+                          font: GoogleFonts.urbanist(),
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
@@ -299,10 +330,10 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                     padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
+                    color: Color(0xFFF88605),
                     textStyle:
                         FlutterFlowTheme.of(context).headlineSmall.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               color: FlutterFlowTheme.of(context).tertiary,
                               letterSpacing: 0.0,
                             ),

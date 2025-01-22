@@ -34,6 +34,8 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => CreateProperty2Model());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -69,7 +71,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
             'i41qcd4m' /* Create Property */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -104,7 +106,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color:
                                           FlutterFlowTheme.of(context).gray600,
                                       letterSpacing: 0.0,
@@ -157,7 +159,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -186,68 +188,6 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: wrapWithModel(
                                     model: _model.amenitityIndicatorModel2,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: AmenitityIndicatorWidget(
-                                      icon: Icon(
-                                        Icons.ev_station_rounded,
-                                        color: FlutterFlowTheme.of(context)
-                                            .gray600,
-                                      ),
-                                      background: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).lineGray,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Material(
-                                color: Colors.transparent,
-                                child: SwitchListTile.adaptive(
-                                  value: _model.amenityEVChargingValue ??=
-                                      false,
-                                  onChanged: (newValue) async {
-                                    safeSetState(() => _model
-                                        .amenityEVChargingValue = newValue!);
-                                  },
-                                  title: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'f25tw8h2' /* EV Car Charging */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily: 'Urbanist',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  tileColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  activeColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  activeTrackColor: Color(0xFF392BBA),
-                                  dense: false,
-                                  controlAffinity:
-                                      ListTileControlAffinity.trailing,
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 0.0, 8.0),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Stack(
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: wrapWithModel(
-                                    model: _model.amenitityIndicatorModel3,
                                     updateCallback: () => safeSetState(() {}),
                                     child: AmenitityIndicatorWidget(
                                       icon: Icon(
@@ -281,7 +221,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -309,7 +249,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: wrapWithModel(
-                                    model: _model.amenitityIndicatorModel4,
+                                    model: _model.amenitityIndicatorModel3,
                                     updateCallback: () => safeSetState(() {}),
                                     child: AmenitityIndicatorWidget(
                                       icon: Icon(
@@ -342,7 +282,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -370,7 +310,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: wrapWithModel(
-                                    model: _model.amenitityIndicatorModel5,
+                                    model: _model.amenitityIndicatorModel4,
                                     updateCallback: () => safeSetState(() {}),
                                     child: AmenitityIndicatorWidget(
                                       icon: Icon(
@@ -403,7 +343,68 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                  tileColor: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  activeTrackColor: Color(0xFF392BBA),
+                                  dense: false,
+                                  controlAffinity:
+                                      ListTileControlAffinity.trailing,
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 8.0, 0.0, 8.0),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Stack(
+                              children: [
+                                Align(
+                                  alignment: AlignmentDirectional(0.0, 0.0),
+                                  child: wrapWithModel(
+                                    model: _model.amenitityIndicatorModel5,
+                                    updateCallback: () => safeSetState(() {}),
+                                    child: AmenitityIndicatorWidget(
+                                      icon: Icon(
+                                        Icons.local_laundry_service_outlined,
+                                        color: FlutterFlowTheme.of(context)
+                                            .gray600,
+                                      ),
+                                      background: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).lineGray,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Expanded(
+                              child: Material(
+                                color: Colors.transparent,
+                                child: SwitchListTile.adaptive(
+                                  value: _model.amenityWasherValue ??= false,
+                                  onChanged: (newValue) async {
+                                    safeSetState(() =>
+                                        _model.amenityWasherValue = newValue!);
+                                  },
+                                  title: Text(
+                                    FFLocalizations.of(context).getText(
+                                      'ilrryi2d' /* Washer */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -452,19 +453,19 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                               child: Material(
                                 color: Colors.transparent,
                                 child: SwitchListTile.adaptive(
-                                  value: _model.amenityWasherValue ??= false,
+                                  value: _model.amenityDryerValue ??= false,
                                   onChanged: (newValue) async {
                                     safeSetState(() =>
-                                        _model.amenityWasherValue = newValue!);
+                                        _model.amenityDryerValue = newValue!);
                                   },
                                   title: Text(
                                     FFLocalizations.of(context).getText(
-                                      'ilrryi2d' /* Washer */,
+                                      'a8sit5rh' /* Dryer */,
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -493,67 +494,6 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: wrapWithModel(
                                     model: _model.amenitityIndicatorModel7,
-                                    updateCallback: () => safeSetState(() {}),
-                                    child: AmenitityIndicatorWidget(
-                                      icon: Icon(
-                                        Icons.local_laundry_service_outlined,
-                                        color: FlutterFlowTheme.of(context)
-                                            .gray600,
-                                      ),
-                                      background: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderColor:
-                                          FlutterFlowTheme.of(context).lineGray,
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Expanded(
-                              child: Material(
-                                color: Colors.transparent,
-                                child: SwitchListTile.adaptive(
-                                  value: _model.amenityDryerValue ??= false,
-                                  onChanged: (newValue) async {
-                                    safeSetState(() =>
-                                        _model.amenityDryerValue = newValue!);
-                                  },
-                                  title: Text(
-                                    FFLocalizations.of(context).getText(
-                                      'a8sit5rh' /* Dryer */,
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily: 'Urbanist',
-                                          letterSpacing: 0.0,
-                                        ),
-                                  ),
-                                  tileColor: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  activeColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  activeTrackColor: Color(0xFF392BBA),
-                                  dense: false,
-                                  controlAffinity:
-                                      ListTileControlAffinity.trailing,
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 0.0, 8.0),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Stack(
-                              children: [
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: wrapWithModel(
-                                    model: _model.amenitityIndicatorModel8,
                                     updateCallback: () => safeSetState(() {}),
                                     child: AmenitityIndicatorWidget(
                                       icon: Icon(
@@ -586,7 +526,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -614,7 +554,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                 Align(
                                   alignment: AlignmentDirectional(0.0, 0.0),
                                   child: wrapWithModel(
-                                    model: _model.amenitityIndicatorModel9,
+                                    model: _model.amenitityIndicatorModel8,
                                     updateCallback: () => safeSetState(() {}),
                                     child: AmenitityIndicatorWidget(
                                       icon: Icon(
@@ -647,7 +587,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                                     style: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -688,7 +628,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -699,15 +639,15 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 letterSpacing: 0.0,
                               ),
                         ),
                       ],
                     ),
                     FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        context.pushNamed('createProperty_3');
                       },
                       text: FFLocalizations.of(context).getText(
                         'ips69hrd' /* NEXT */,
@@ -722,7 +662,7 @@ class _CreateProperty2WidgetState extends State<CreateProperty2Widget> {
                         color: FlutterFlowTheme.of(context).primary,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

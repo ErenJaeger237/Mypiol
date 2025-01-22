@@ -35,6 +35,7 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -71,7 +72,7 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
             'sqclhab6' /* My Properties */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -92,7 +93,7 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                     unselectedLabelColor: FlutterFlowTheme.of(context).grayIcon,
                     labelStyle:
                         FlutterFlowTheme.of(context).titleSmall.override(
-                              fontFamily: 'Urbanist',
+                              font: GoogleFonts.urbanist(),
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
                             ),
@@ -273,8 +274,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .darkText,
@@ -313,8 +314,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
+                                                                  font: GoogleFonts
+                                                                      .lexendDeca(),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -338,8 +339,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -371,8 +372,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
+                                                          font: GoogleFonts
+                                                              .lexendDeca(),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .gray600,
@@ -397,8 +398,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                font: GoogleFonts
+                                                                    .lexendDeca(),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .grayIcon,
@@ -558,8 +559,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .headlineSmall
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .darkText,
@@ -598,8 +599,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                                     context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  fontFamily:
-                                                                      'Lexend Deca',
+                                                                  font: GoogleFonts
+                                                                      .lexendDeca(),
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -623,8 +624,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .titleMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
@@ -656,8 +657,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Lexend Deca',
+                                                          font: GoogleFonts
+                                                              .lexendDeca(),
                                                           color: FlutterFlowTheme
                                                                   .of(context)
                                                               .gray600,
@@ -682,8 +683,8 @@ class _MyPropertiesWidgetState extends State<MyPropertiesWidget>
                                                                   context)
                                                               .bodyMedium
                                                               .override(
-                                                                fontFamily:
-                                                                    'Lexend Deca',
+                                                                font: GoogleFonts
+                                                                    .lexendDeca(),
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .grayIcon,

@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -30,6 +29,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -72,7 +73,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(24.0, 40.0, 0.0, 0.0),
                     child: Image.asset(
-                      'assets/images/Design_sans_titre.png',
+                      'assets/images/combined-image(HD).png',
                       width: 160.0,
                       height: 50.0,
                       fit: BoxFit.fitWidth,
@@ -92,7 +93,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                fontFamily: 'Urbanist',
+                                font: GoogleFonts.urbanist(),
                                 color: FlutterFlowTheme.of(context).tertiary,
                                 letterSpacing: 0.0,
                               ),
@@ -130,7 +131,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        fontFamily: 'Urbanist',
+                                        font: GoogleFonts.urbanist(),
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         letterSpacing: 0.0,
@@ -172,7 +173,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color:
                                           FlutterFlowTheme.of(context).tertiary,
                                       letterSpacing: 0.0,
@@ -211,7 +212,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -308,11 +309,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Hero(
-                                  tag: valueOrDefault<String>(
-                                    listViewPropertiesRecord.mainImage,
-                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg' +
-                                        '$listViewIndex',
-                                  ),
+                                  tag: listViewPropertiesRecord.mainImage,
                                   transitionOnUserGestures: true,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.only(
@@ -321,15 +318,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                       topLeft: Radius.circular(8.0),
                                       topRight: Radius.circular(8.0),
                                     ),
-                                    child: CachedNetworkImage(
-                                      fadeInDuration:
-                                          Duration(milliseconds: 500),
-                                      fadeOutDuration:
-                                          Duration(milliseconds: 500),
-                                      imageUrl: valueOrDefault<String>(
-                                        listViewPropertiesRecord.mainImage,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-                                      ),
+                                    child: Image.network(
+                                      listViewPropertiesRecord.mainImage,
                                       width: double.infinity,
                                       height: 190.0,
                                       fit: BoxFit.cover,
@@ -352,7 +342,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                font: GoogleFonts.urbanist(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -377,7 +367,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                fontFamily: 'Urbanist',
+                                                font: GoogleFonts.urbanist(),
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -440,8 +430,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -458,8 +448,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          fontFamily:
-                                                              'Urbanist',
+                                                          font: GoogleFonts
+                                                              .urbanist(),
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),

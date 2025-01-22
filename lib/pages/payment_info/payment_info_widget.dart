@@ -26,6 +26,8 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => PaymentInfoModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -62,7 +64,7 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
             '51m80789' /* Payment Information */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                fontFamily: 'Urbanist',
+                font: GoogleFonts.urbanist(),
                 letterSpacing: 0.0,
               ),
         ),
@@ -107,7 +109,7 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
                         spacing: 10.0,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).darkText,
                                   letterSpacing: 0.0,
                                 ),
@@ -146,10 +148,10 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
                               0.0, 0.0, 0.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FlutterFlowTheme.of(context).turquoise,
+                          color: Color(0xFFF88605),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Colors.white,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,

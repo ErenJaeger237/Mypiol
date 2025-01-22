@@ -27,6 +27,8 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => BottomSheetModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -81,7 +83,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'tc5htkcx' /* Session Booked! */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        fontFamily: 'Urbanist',
+                        font: GoogleFonts.urbanist(),
                         color: FlutterFlowTheme.of(context).dark600,
                         letterSpacing: 0.0,
                       ),
@@ -94,7 +96,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'w5vt7daf' /* You have successfully booked a... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Urbanist',
+                        font: GoogleFonts.urbanist(),
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -106,7 +108,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'utk3mck0' /* Mon, Dec 11 - 2021 */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        fontFamily: 'Urbanist',
+                        font: GoogleFonts.urbanist(),
                         color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 32.0,
                         letterSpacing: 0.0,

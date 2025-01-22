@@ -82,6 +82,8 @@ class _BookNowWidgetState extends State<BookNowWidget>
           !anim.applyInitialState),
       this,
     );
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -141,7 +143,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                             style: FlutterFlowTheme.of(context)
                                 .headlineMedium
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -189,7 +191,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                             style: FlutterFlowTheme.of(context)
                                 .displaySmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   letterSpacing: 0.0,
                                 ),
                           ),
@@ -212,7 +214,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                             ),
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -242,7 +244,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -315,7 +317,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            font: GoogleFonts.urbanist(),
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -388,7 +390,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          fontFamily: 'Urbanist',
+                                          font: GoogleFonts.urbanist(),
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -418,7 +420,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -467,7 +469,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -495,7 +497,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -532,7 +534,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Colors.white,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -550,7 +552,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      fontFamily: 'Lexend Deca',
+                                      font: GoogleFonts.lexendDeca(),
                                       color: Color(0xFF95A1AC),
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -590,7 +592,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -614,7 +616,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -628,7 +630,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -649,7 +651,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    fontFamily: 'Lexend Deca',
+                                    font: GoogleFonts.lexendDeca(),
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -663,7 +665,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -687,7 +689,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        fontFamily: 'Lexend Deca',
+                                        font: GoogleFonts.lexendDeca(),
                                         color: Color(0xFF8B97A2),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
@@ -733,7 +735,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -846,7 +848,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                             style: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  fontFamily: 'Urbanist',
+                                  font: GoogleFonts.urbanist(),
                                   color: FlutterFlowTheme.of(context).tertiary,
                                   letterSpacing: 0.0,
                                 ),
@@ -872,7 +874,7 @@ class _BookNowWidgetState extends State<BookNowWidget>
                       color: Color(0xFF4B39EF),
                       textStyle:
                           FlutterFlowTheme.of(context).displaySmall.override(
-                                fontFamily: 'Lexend Deca',
+                                font: GoogleFonts.lexendDeca(),
                                 color: Colors.white,
                                 fontSize: 20.0,
                                 letterSpacing: 0.0,

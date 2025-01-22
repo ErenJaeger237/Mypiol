@@ -36,6 +36,8 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
 
     _model.textController ??= TextEditingController(text: widget!.searchTerm);
     _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -51,7 +53,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).dark600,
+        backgroundColor: Color(0xFFF88605),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -71,7 +73,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
             'ah7gfjf4' /* Search */,
           ),
           style: FlutterFlowTheme.of(context).titleMedium.override(
-                fontFamily: 'Lexend Deca',
+                font: GoogleFonts.lexendDeca(),
                 color: FlutterFlowTheme.of(context).tertiary,
                 fontSize: 18.0,
                 letterSpacing: 0.0,
@@ -91,7 +93,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).dark600,
+                  color: Color(0xFFF88605),
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 3.0,
@@ -109,6 +111,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                     width: double.infinity,
                     height: 60.0,
                     decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).tertiary,
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
@@ -130,7 +133,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      fontFamily: 'Urbanist',
+                                      font: GoogleFonts.urbanist(),
                                       color:
                                           FlutterFlowTheme.of(context).grayIcon,
                                       letterSpacing: 0.0,
@@ -171,9 +174,9 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    fontFamily: 'Urbanist',
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
+                                    font: GoogleFonts.urbanist(),
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
                                     letterSpacing: 0.0,
                                   ),
                               validator: _model.textControllerValidator
@@ -198,11 +201,11 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                   0.0, 0.0, 0.0, 0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
+                              color: Color(0xFFF88605),
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    fontFamily: 'Urbanist',
+                                    font: GoogleFonts.urbanist(),
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),
@@ -335,7 +338,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall
                                           .override(
-                                            fontFamily: 'Urbanist',
+                                            font: GoogleFonts.urbanist(),
                                             color: FlutterFlowTheme.of(context)
                                                 .darkText,
                                             letterSpacing: 0.0,
@@ -356,7 +359,7 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
-                                            fontFamily: 'Lexend Deca',
+                                            font: GoogleFonts.lexendDeca(),
                                             color: FlutterFlowTheme.of(context)
                                                 .grayIcon,
                                             letterSpacing: 0.0,
@@ -420,8 +423,8 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
+                                                        font: GoogleFonts
+                                                            .lexendDeca(),
                                                         color:
                                                             Color(0xFF8B97A2),
                                                         fontSize: 12.0,
@@ -444,8 +447,8 @@ class _SearchPropertiesWidgetState extends State<SearchPropertiesWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        fontFamily:
-                                                            'Lexend Deca',
+                                                        font: GoogleFonts
+                                                            .lexendDeca(),
                                                         color:
                                                             Color(0xFF8B97A2),
                                                         fontSize: 12.0,

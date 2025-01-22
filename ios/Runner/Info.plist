@@ -33,7 +33,7 @@
             <string>Editor</string>
             <key>CFBundleURLSchemes</key>
             <array>
-                <!--FF_REVERSED_CLIENT_ID-->
+                <string>com.googleusercontent.apps.254084640633-j1mgklae6kq4t2m95ifskps2v7s05gh0</string>
                 
             </array>
         </dict>
@@ -61,8 +61,11 @@
 	<key>NSCameraUsageDescription</key>
     <string>In order to take a picture or video, this app requires permission to access the camera.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-    <string>In order to upload data, this app requires permission to access the photo library.</string>
-
+    <string>please garnt permission to access photos</string>
+	<key>PermissionGroupNotification</key>
+    <string>please allow app to access notification</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+    <string>please enable loction</string>
 
 
 	<key>UILaunchStoryboardName</key>
