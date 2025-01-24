@@ -150,8 +150,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Welcome Back,',
       'fr': '',
     },
+    'bfanwv6c': {
+      'en': 'Email Address',
+      'fr': '',
+    },
     'es8h8sf8': {
       'en': 'Enter your email here...',
+      'fr': '',
+    },
+    'chqsoxkc': {
+      'en': '',
       'fr': '',
     },
     'liaewqaa': {
@@ -206,7 +214,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     '16ajs3s3': {
-      'en': 'Enter your email here...',
+      'en': 'Enter your pasword here...',
       'fr': '',
     },
     '4ijhzkv6': {
@@ -398,16 +406,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Taxes',
       'fr': '',
     },
-    'xgo7hfig': {
-      'en': '\$24.20',
-      'fr': '',
-    },
     'w0khtgdw': {
       'en': 'Cleaning Fee',
       'fr': '',
     },
     'ezq1xrmj': {
-      'en': '\$40.00',
+      'en': 'FCFA40.00',
       'fr': '',
     },
     'nzbxoitm': {
@@ -415,7 +419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'qg9c6upo': {
-      'en': 'Your trip has been completed!',
+      'en': 'Your Oder has been completed!',
       'fr': '',
     },
     'mmdy2uvi': {

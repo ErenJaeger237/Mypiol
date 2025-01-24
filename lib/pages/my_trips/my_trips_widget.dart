@@ -497,7 +497,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                             decimalType:
                                                                 DecimalType
                                                                     .automatic,
-                                                            currency: '\$',
+                                                            currency: 'FCFA',
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -900,7 +900,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                             decimalType:
                                                                 DecimalType
                                                                     .automatic,
-                                                            currency: '\$',
+                                                            currency: 'FCFA',
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -974,9 +974,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                           0.0,
                                                                           0.0,
                                                                           0.0),
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
+                                                              color: Color(
+                                                                  0xFFF88605),
                                                               textStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)

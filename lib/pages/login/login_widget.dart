@@ -215,9 +215,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                     focusNode: _model.emailAddressFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
-                                      labelText: emailAddressUserdetailRecord
-                                          ?.hasEmail()
-                                          ?.toString(),
+                                      labelText:
+                                          FFLocalizations.of(context).getText(
+                                        'bfanwv6c' /* Email Address */,
+                                      ),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -280,6 +281,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                           fontFamily: 'Urbanist',
                                           letterSpacing: 0.0,
                                         ),
+                                    keyboardType: TextInputType.emailAddress,
                                     validator: _model
                                         .emailAddressTextControllerValidator
                                         .asValidator(context),
@@ -303,10 +305,6 @@ class _LoginWidgetState extends State<LoginWidget>
                                 focusNode: _model.passwordFocusNode,
                                 obscureText: !_model.passwordVisibility,
                                 decoration: InputDecoration(
-                                  labelText:
-                                      (_model.passwordFocusNode?.hasFocus ??
-                                              false)
-                                          .toString(),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
@@ -378,6 +376,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
+                                keyboardType: TextInputType.visiblePassword,
                                 validator: _model
                                     .passwordTextControllerValidator
                                     .asValidator(context),

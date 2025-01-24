@@ -211,6 +211,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
+                                keyboardType: TextInputType.emailAddress,
                                 validator: _model
                                     .emailAddressTextControllerValidator
                                     .asValidator(context),
@@ -243,7 +244,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '16ajs3s3' /* Enter your email here... */,
+                                    '16ajs3s3' /* Enter your pasword here... */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -307,6 +308,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                       fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
+                                keyboardType: TextInputType.visiblePassword,
                                 validator: _model
                                     .passwordTextControllerValidator
                                     .asValidator(context),

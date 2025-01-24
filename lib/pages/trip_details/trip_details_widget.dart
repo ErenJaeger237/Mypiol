@@ -418,7 +418,7 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                                 widget!.tripRef!.tripTotal,
                                 formatType: FormatType.decimal,
                                 decimalType: DecimalType.automatic,
-                                currency: '\$',
+                                currency: 'FCFA',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -452,8 +452,9 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                                   ),
                             ),
                             Text(
-                              FFLocalizations.of(context).getText(
-                                'xgo7hfig' /* $24.20 */,
+                              valueOrDefault<String>(
+                                widget!.tripRef?.rated?.toString(),
+                                'FCFA2000',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -488,7 +489,7 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'ezq1xrmj' /* $40.00 */,
+                                'ezq1xrmj' /* FCFA40.00 */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
@@ -561,7 +562,7 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                                 widget!.tripRef!.tripTotal,
                                 formatType: FormatType.decimal,
                                 decimalType: DecimalType.automatic,
-                                currency: '\$',
+                                currency: 'FCAF',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
@@ -581,7 +582,7 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'qg9c6upo' /* Your trip has been completed! */,
+                            'qg9c6upo' /* Your Oder has been completed! */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).titleMedium.override(
@@ -627,7 +628,7 @@ class _TripDetailsWidgetState extends State<TripDetailsWidget> {
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
+                                color: Color(0xFFF88605),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(

@@ -309,7 +309,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Hero(
-                                  tag: listViewPropertiesRecord.mainImage,
+                                  tag: '',
                                   transitionOnUserGestures: true,
                                   child: ClipRRect(
                                     borderRadius: BorderRadius.only(
@@ -318,8 +318,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                       topLeft: Radius.circular(8.0),
                                       topRight: Radius.circular(8.0),
                                     ),
-                                    child: Image.network(
-                                      listViewPropertiesRecord.mainImage,
+                                    child: Image.asset(
+                                      'assets/images/IMG-20241226-WA0148.jpg',
                                       width: double.infinity,
                                       height: 190.0,
                                       fit: BoxFit.cover,

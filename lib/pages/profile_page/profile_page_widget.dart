@@ -37,6 +37,19 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
     _model = createModel(context, () => ProfilePageModel());
 
     animationsMap.addAll({
+      'stackOnActionTriggerAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onActionTrigger,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 600.0.ms,
+            begin: Offset(0.0, 0.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
       'containerOnActionTriggerAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onActionTrigger,
         applyInitialState: false,
@@ -46,6 +59,19 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
             delay: 0.0.ms,
             duration: 350.0.ms,
             begin: Offset(40.0, 0.0),
+            end: Offset(0.0, 0.0),
+          ),
+        ],
+      ),
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        applyInitialState: true,
+        effectsBuilder: () => [
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 1520.0.ms,
+            begin: Offset(0.0, 0.0),
             end: Offset(0.0, 0.0),
           ),
         ],
@@ -339,14 +365,20 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   BorderRadius.circular(30.0),
                                               shape: BoxShape.rectangle,
                                             ),
-                                          ).animateOnActionTrigger(
-                                              animationsMap[
-                                                  'containerOnActionTriggerAnimation1']!,
-                                              hasBeenTriggered:
-                                                  hasContainerTriggered1),
+                                          )
+                                              .animateOnPageLoad(animationsMap[
+                                                  'containerOnPageLoadAnimation']!)
+                                              .animateOnActionTrigger(
+                                                  animationsMap[
+                                                      'containerOnActionTriggerAnimation1']!,
+                                                  hasBeenTriggered:
+                                                      hasContainerTriggered1),
                                         ),
                                       ],
                                     ),
+                                  ).animateOnActionTrigger(
+                                    animationsMap[
+                                        'stackOnActionTriggerAnimation']!,
                                   ),
                                 ),
                               ],
