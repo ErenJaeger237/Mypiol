@@ -83,7 +83,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'tc5htkcx' /* Session Booked! */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         color: FlutterFlowTheme.of(context).dark600,
                         letterSpacing: 0.0,
                       ),
@@ -96,7 +96,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'w5vt7daf' /* You have successfully booked a... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         letterSpacing: 0.0,
                       ),
                 ),
@@ -108,7 +108,7 @@ class _BottomSheetWidgetState extends State<BottomSheetWidget> {
                     'utk3mck0' /* Mon, Dec 11 - 2021 */,
                   ),
                   style: FlutterFlowTheme.of(context).displaySmall.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         color: FlutterFlowTheme.of(context).secondary,
                         fontSize: 32.0,
                         letterSpacing: 0.0,

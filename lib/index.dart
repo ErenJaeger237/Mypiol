@@ -27,7 +27,7 @@ export '/pages/create_property_3/create_property3_widget.dart'
 export '/pages/my_properties/my_properties_widget.dart' show MyPropertiesWidget;
 export '/pages/property_details_owner/property_details_owner_widget.dart'
     show PropertyDetailsOwnerWidget;
-export '/pages/my_bookings/my_bookings_widget.dart' show MyBookingsWidget;
+export '/pages/my_oder/my_oder_widget.dart' show MyOderWidget;
 export '/pages/trip_details_h_o_s_t/trip_details_h_o_s_t_widget.dart'
     show TripDetailsHOSTWidget;
 export '/pages/edit_property_1/edit_property1_widget.dart'

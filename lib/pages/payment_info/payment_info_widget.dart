@@ -64,7 +64,7 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
             '51m80789' /* Payment Information */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 letterSpacing: 0.0,
               ),
         ),
@@ -109,7 +109,7 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
                         spacing: 10.0,
                         textStyle:
                             FlutterFlowTheme.of(context).bodyMedium.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).darkText,
                                   letterSpacing: 0.0,
                                 ),
@@ -151,7 +151,7 @@ class _PaymentInfoWidgetState extends State<PaymentInfoWidget> {
                           color: Color(0xFFF88605),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: Colors.white,
                                     fontSize: 16.0,
                                     letterSpacing: 0.0,

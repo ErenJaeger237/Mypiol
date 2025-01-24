@@ -204,91 +204,106 @@ class ThemeTypography extends Typography {
   final FlutterFlowTheme theme;
 
   String get displayLargeFamily => 'Poppins';
-  TextStyle get displayLarge => GoogleFonts.poppins(
+  TextStyle get displayLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 57.0,
       );
   String get displayMediumFamily => 'Poppins';
-  TextStyle get displayMedium => GoogleFonts.poppins(
+  TextStyle get displayMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 45.0,
       );
   String get displaySmallFamily => 'Urbanist';
-  TextStyle get displaySmall => GoogleFonts.urbanist(
+  TextStyle get displaySmall => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 24.0,
       );
   String get headlineLargeFamily => 'Poppins';
-  TextStyle get headlineLarge => GoogleFonts.poppins(
+  TextStyle get headlineLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 32.0,
       );
   String get headlineMediumFamily => 'Urbanist';
-  TextStyle get headlineMedium => GoogleFonts.urbanist(
+  TextStyle get headlineMedium => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
   String get headlineSmallFamily => 'Urbanist';
-  TextStyle get headlineSmall => GoogleFonts.urbanist(
+  TextStyle get headlineSmall => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.bold,
         fontSize: 20.0,
       );
   String get titleLargeFamily => 'Poppins';
-  TextStyle get titleLarge => GoogleFonts.poppins(
+  TextStyle get titleLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 22.0,
       );
   String get titleMediumFamily => 'Urbanist';
-  TextStyle get titleMedium => GoogleFonts.urbanist(
+  TextStyle get titleMedium => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 18.0,
       );
   String get titleSmallFamily => 'Urbanist';
-  TextStyle get titleSmall => GoogleFonts.urbanist(
+  TextStyle get titleSmall => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w600,
         fontSize: 16.0,
       );
   String get labelLargeFamily => 'Poppins';
-  TextStyle get labelLarge => GoogleFonts.poppins(
+  TextStyle get labelLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get labelMediumFamily => 'Poppins';
-  TextStyle get labelMedium => GoogleFonts.poppins(
+  TextStyle get labelMedium => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 12.0,
       );
   String get labelSmallFamily => 'Poppins';
-  TextStyle get labelSmall => GoogleFonts.poppins(
+  TextStyle get labelSmall => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 11.0,
       );
   String get bodyLargeFamily => 'Poppins';
-  TextStyle get bodyLarge => GoogleFonts.poppins(
+  TextStyle get bodyLarge => GoogleFonts.getFont(
+        'Poppins',
         color: theme.primaryText,
         fontWeight: FontWeight.normal,
         fontSize: 16.0,
       );
   String get bodyMediumFamily => 'Urbanist';
-  TextStyle get bodyMedium => GoogleFonts.urbanist(
+  TextStyle get bodyMedium => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.secondaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
       );
   String get bodySmallFamily => 'Urbanist';
-  TextStyle get bodySmall => GoogleFonts.urbanist(
+  TextStyle get bodySmall => GoogleFonts.getFont(
+        'Urbanist',
         color: theme.primaryText,
         fontWeight: FontWeight.w500,
         fontSize: 14.0,
@@ -334,43 +349,38 @@ class DarkModeTheme extends FlutterFlowTheme {
 
 extension TextStyleHelper on TextStyle {
   TextStyle override({
-    TextStyle? font,
     String? fontFamily,
     Color? color,
     double? fontSize,
     FontWeight? fontWeight,
     double? letterSpacing,
     FontStyle? fontStyle,
-    bool useGoogleFonts = false,
+    bool useGoogleFonts = true,
     TextDecoration? decoration,
     double? lineHeight,
     List<Shadow>? shadows,
-  }) {
-    if (useGoogleFonts && fontFamily != null) {
-      font = GoogleFonts.getFont(fontFamily);
-    }
-
-    return font != null
-        ? font.copyWith(
-            color: color ?? this.color,
-            fontSize: fontSize ?? this.fontSize,
-            letterSpacing: letterSpacing ?? this.letterSpacing,
-            fontWeight: fontWeight ?? this.fontWeight,
-            fontStyle: fontStyle ?? this.fontStyle,
-            decoration: decoration,
-            height: lineHeight,
-            shadows: shadows,
-          )
-        : copyWith(
-            fontFamily: fontFamily,
-            color: color,
-            fontSize: fontSize,
-            letterSpacing: letterSpacing,
-            fontWeight: fontWeight,
-            fontStyle: fontStyle,
-            decoration: decoration,
-            height: lineHeight,
-            shadows: shadows,
-          );
-  }
+  }) =>
+      useGoogleFonts
+          ? GoogleFonts.getFont(
+              fontFamily!,
+              color: color ?? this.color,
+              fontSize: fontSize ?? this.fontSize,
+              letterSpacing: letterSpacing ?? this.letterSpacing,
+              fontWeight: fontWeight ?? this.fontWeight,
+              fontStyle: fontStyle ?? this.fontStyle,
+              decoration: decoration,
+              height: lineHeight,
+              shadows: shadows,
+            )
+          : copyWith(
+              fontFamily: fontFamily,
+              color: color,
+              fontSize: fontSize,
+              letterSpacing: letterSpacing,
+              fontWeight: fontWeight,
+              fontStyle: fontStyle,
+              decoration: decoration,
+              height: lineHeight,
+              shadows: shadows,
+            );
 }

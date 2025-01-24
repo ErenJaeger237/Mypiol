@@ -9,26 +9,26 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'my_bookings_model.dart';
-export 'my_bookings_model.dart';
+import 'my_oder_model.dart';
+export 'my_oder_model.dart';
 
-class MyBookingsWidget extends StatefulWidget {
-  const MyBookingsWidget({super.key});
+class MyOderWidget extends StatefulWidget {
+  const MyOderWidget({super.key});
 
   @override
-  State<MyBookingsWidget> createState() => _MyBookingsWidgetState();
+  State<MyOderWidget> createState() => _MyOderWidgetState();
 }
 
-class _MyBookingsWidgetState extends State<MyBookingsWidget>
+class _MyOderWidgetState extends State<MyOderWidget>
     with TickerProviderStateMixin {
-  late MyBookingsModel _model;
+  late MyOderModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MyBookingsModel());
+    _model = createModel(context, () => MyOderModel());
 
     _model.tabBarController = TabController(
       vsync: this,
@@ -72,7 +72,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
             'vdoocfo9' /* My Order */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 letterSpacing: 0.0,
               ),
         ),
@@ -93,7 +93,7 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                     unselectedLabelColor: FlutterFlowTheme.of(context).grayIcon,
                     labelStyle:
                         FlutterFlowTheme.of(context).titleSmall.override(
-                              font: GoogleFonts.urbanist(),
+                              fontFamily: 'Urbanist',
                               letterSpacing: 0.0,
                               fontWeight: FontWeight.w500,
                             ),
@@ -267,12 +267,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                     topRight:
                                                         Radius.circular(8.0),
                                                   ),
-                                                  child: Image.network(
-                                                    valueOrDefault<String>(
-                                                      columnPropertiesRecord
-                                                          .mainImage,
-                                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/jyeiyll24v90/pixasquare-4ojhpgKpS68-unsplash.jpg',
-                                                    ),
+                                                  child: Image.asset(
+                                                    'assets/images/IMG-20241226-WA0148.jpg',
                                                     width: double.infinity,
                                                     height: 140.0,
                                                     fit: BoxFit.cover,
@@ -301,8 +297,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -324,8 +320,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -351,8 +347,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -393,8 +389,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .lexendDeca(),
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -413,15 +409,15 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                           decimalType:
                                                               DecimalType
                                                                   .automatic,
-                                                          currency: '\$',
+                                                          currency: 'FCFA',
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -459,8 +455,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .lexendDeca(),
+                                                                fontFamily:
+                                                                    'Lexend Deca',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .grayIcon,
@@ -669,8 +665,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -692,8 +688,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -719,8 +715,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .darkText,
@@ -761,8 +757,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     .of(context)
                                                                 .bodySmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .lexendDeca(),
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -788,8 +784,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                     context)
                                                                 .titleMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
@@ -827,8 +823,8 @@ class _MyBookingsWidgetState extends State<MyBookingsWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .lexendDeca(),
+                                                                fontFamily:
+                                                                    'Lexend Deca',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .grayIcon,

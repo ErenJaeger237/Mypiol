@@ -314,11 +314,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'myBookings',
-          path: '/myBookings',
+          name: 'myOder',
+          path: '/myOder',
           builder: (context, params) => NavBarPage(
             initialPage: '',
-            page: MyBookingsWidget(),
+            page: MyOderWidget(),
           ),
         ),
         FFRoute(

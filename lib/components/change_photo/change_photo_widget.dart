@@ -174,7 +174,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -299,7 +299,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).primaryBackground,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.urbanist(),
+                          fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primaryText,
                           letterSpacing: 0.0,
                         ),
@@ -333,7 +333,7 @@ class _ChangePhotoWidgetState extends State<ChangePhotoWidget>
                     color: Color(0xFFF88605),
                     textStyle:
                         FlutterFlowTheme.of(context).headlineSmall.override(
-                              font: GoogleFonts.urbanist(),
+                              fontFamily: 'Urbanist',
                               color: FlutterFlowTheme.of(context).tertiary,
                               letterSpacing: 0.0,
                             ),

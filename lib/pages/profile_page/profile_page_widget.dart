@@ -132,8 +132,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         ),
                         child: Padding(
                           padding: EdgeInsets.all(2.0),
-                          child: StreamBuilder<List<UserdetailRecord>>(
-                            stream: queryUserdetailRecord(
+                          child: StreamBuilder<List<UsersRecord>>(
+                            stream: queryUsersRecord(
                               singleRecord: true,
                             ),
                             builder: (context, snapshot) {
@@ -151,16 +151,15 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   ),
                                 );
                               }
-                              List<UserdetailRecord>
-                                  userAvatarUserdetailRecordList =
+                              List<UsersRecord> userAvatarUsersRecordList =
                                   snapshot.data!;
                               // Return an empty Container when the item does not exist.
                               if (snapshot.data!.isEmpty) {
                                 return Container();
                               }
-                              final userAvatarUserdetailRecord =
-                                  userAvatarUserdetailRecordList.isNotEmpty
-                                      ? userAvatarUserdetailRecordList.first
+                              final userAvatarUsersRecord =
+                                  userAvatarUsersRecordList.isNotEmpty
+                                      ? userAvatarUsersRecordList.first
                                       : null;
 
                               return ClipRRect(
@@ -193,7 +192,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Colors.white,
                                       fontSize: 20.0,
                                       letterSpacing: 0.0,
@@ -208,7 +207,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 14.0,
@@ -278,7 +277,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.outfit(),
+                                        fontFamily: 'Outfit',
                                         color: Colors.white,
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -292,52 +291,62 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     color: Color(0xFF1D2429),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
-                                  child: Stack(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
-                                    children: [
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(0.95, 0.0),
-                                        child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 8.0, 0.0),
-                                          child: Icon(
-                                            Icons.nights_stay,
-                                            color: Color(0xFF95A1AC),
-                                            size: 20.0,
+                                  child: InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
+                                    onTap: () async {
+                                      setDarkModeSetting(
+                                          context, ThemeMode.dark);
+                                    },
+                                    child: Stack(
+                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.95, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 8.0, 0.0),
+                                            child: Icon(
+                                              Icons.nights_stay,
+                                              color: Color(0xFF95A1AC),
+                                              size: 20.0,
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      Align(
-                                        alignment:
-                                            AlignmentDirectional(-0.85, 0.0),
-                                        child: Container(
-                                          width: 36.0,
-                                          height: 36.0,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xFF14181B),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x430B0D0F),
-                                                offset: Offset(
-                                                  0.0,
-                                                  2.0,
-                                                ),
-                                              )
-                                            ],
-                                            borderRadius:
-                                                BorderRadius.circular(30.0),
-                                            shape: BoxShape.rectangle,
-                                          ),
-                                        ).animateOnActionTrigger(
-                                            animationsMap[
-                                                'containerOnActionTriggerAnimation1']!,
-                                            hasBeenTriggered:
-                                                hasContainerTriggered1),
-                                      ),
-                                    ],
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-0.85, 0.0),
+                                          child: Container(
+                                            width: 36.0,
+                                            height: 36.0,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xFF14181B),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  blurRadius: 4.0,
+                                                  color: Color(0x430B0D0F),
+                                                  offset: Offset(
+                                                    0.0,
+                                                    2.0,
+                                                  ),
+                                                )
+                                              ],
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                              shape: BoxShape.rectangle,
+                                            ),
+                                          ).animateOnActionTrigger(
+                                              animationsMap[
+                                                  'containerOnActionTriggerAnimation1']!,
+                                              hasBeenTriggered:
+                                                  hasContainerTriggered1),
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ],
@@ -394,7 +403,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.outfit(),
+                                      fontFamily: 'Outfit',
                                       color: Colors.white,
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -509,7 +518,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -586,7 +595,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -599,8 +608,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   color: Color(0xFF95A1AC),
                                   size: 25.0,
                                 ),
-                                onPressed: () {
-                                  print('IconButton pressed ...');
+                                onPressed: () async {
+                                  context.pushNamed('editProfile');
                                 },
                               ),
                             ],
@@ -668,7 +677,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -681,8 +690,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     color: Color(0xFF95A1AC),
                                     size: 25.0,
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('paymentInfo');
                                   },
                                 ),
                               ],
@@ -762,7 +771,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -775,8 +784,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     color: Color(0xFF95A1AC),
                                     size: 25.0,
                                   ),
-                                  onPressed: () {
-                                    print('IconButton pressed ...');
+                                  onPressed: () async {
+                                    context.pushNamed('changePassword');
                                   },
                                 ),
                               ],
@@ -851,7 +860,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: GoogleFonts.urbanist(),
+                                              fontFamily: 'Urbanist',
                                               letterSpacing: 0.0,
                                             ),
                                       ),
@@ -875,7 +884,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.urbanist(),
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
@@ -892,8 +901,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                         color: Color(0xFF95A1AC),
                                         size: 25.0,
                                       ),
-                                      onPressed: () {
-                                        print('IconButton pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('myProperties');
                                       },
                                     ),
                                   ],
@@ -919,7 +928,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          context.pushNamed('myBookings');
+                          context.pushNamed('myOder');
                         },
                         child: Material(
                           color: Colors.transparent,
@@ -966,7 +975,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
-                                            font: GoogleFonts.urbanist(),
+                                            fontFamily: 'Urbanist',
                                             letterSpacing: 0.0,
                                           ),
                                     ),
@@ -980,8 +989,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                       color: Color(0xFF95A1AC),
                                       size: 25.0,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
+                                    onPressed: () async {
+                                      context.pushNamed('myOder');
                                     },
                                   ),
                                 ],
@@ -1014,7 +1023,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFFF91515),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.lexendDeca(),
+                          fontFamily: 'Lexend Deca',
                           color: FlutterFlowTheme.of(context).darkText,
                           fontSize: 16.0,
                           letterSpacing: 0.0,
@@ -1061,7 +1070,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                         color: Color(0xFFF88605),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: Colors.white,
                                   letterSpacing: 0.0,
                                 ),

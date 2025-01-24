@@ -130,7 +130,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -157,7 +157,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -166,7 +166,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -208,7 +208,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model
@@ -239,7 +239,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -248,7 +248,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -304,7 +304,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model
@@ -356,7 +356,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: Colors.white,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
@@ -383,7 +383,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -405,7 +405,7 @@ class _CreateAccountWidgetState extends State<CreateAccountWidget> {
                           color: Color(0x00FFFFFF),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: Color(0xFF39D2C0),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,

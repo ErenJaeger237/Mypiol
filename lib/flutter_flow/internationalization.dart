@@ -360,7 +360,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'b2qhbidd': {
-      'en': 'My Trips',
+      'en': 'My Oders',
       'fr': '',
     },
     'fblutesr': {
@@ -371,7 +371,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // tripDetails
   {
     's3fytamy': {
-      'en': 'Trip Details',
+      'en': 'Trip others',
       'fr': '',
     },
     'xvwyci4r': {
@@ -419,7 +419,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'mmdy2uvi': {
-      'en': 'Review Trip',
+      'en': 'Review oder',
       'fr': '',
     },
     'l17myrgh': {
@@ -656,8 +656,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'PROPERTY NAME',
       'fr': '',
     },
-    'tnbghi08': {
-      'en': 'HOW IS IT CALLED',
+    'vj4u5zbb': {
+      'en': 'The Quater',
       'fr': '',
     },
     'z6ad4548': {
@@ -818,7 +818,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'dfqezngf': {
-      'en': 'Price Per Night',
+      'en': 'Price Per Month',
       'fr': '',
     },
     '9mp3cbfp': {
@@ -826,7 +826,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'q2uy6shl': {
-      'en': 'Price Per Night',
+      'en': 'Price Per Month',
       'fr': '',
     },
     'sqclhab6': {
@@ -895,7 +895,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
   },
-  // myBookings
+  // myOder
   {
     'rw0m85ya': {
       'en': 'Upcoming ',
@@ -933,7 +933,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // tripDetailsHOST
   {
     '49mk481j': {
-      'en': 'Trip Details',
+      'en': 'Oder Details',
       'fr': '',
     },
     'eanydtui': {
@@ -961,15 +961,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'fr': '',
     },
     'xq1wp9gf': {
-      'en': '\$24.20',
+      'en': 'FCFA24.20',
       'fr': '',
     },
     'nzxbc5zq': {
       'en': 'Cleaning Fee',
       'fr': '',
     },
-    'dczh5drf': {
-      'en': '\$40.00',
+    '9kuihpin': {
+      'en': 'FCFA40.00',
       'fr': '',
     },
     '3l0vaj49': {

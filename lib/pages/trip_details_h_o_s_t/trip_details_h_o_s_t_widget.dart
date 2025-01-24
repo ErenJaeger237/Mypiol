@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -75,10 +74,10 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            '49mk481j' /* Trip Details */,
+            '49mk481j' /* Oder Details */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 letterSpacing: 0.0,
               ),
         ),
@@ -137,7 +136,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                         'eanydtui' /* Dates of trip */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            font: GoogleFonts.lexendDeca(),
+                            fontFamily: 'Lexend Deca',
                             color: FlutterFlowTheme.of(context).gray600,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
@@ -160,7 +159,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -171,7 +170,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).darkText,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.bold,
@@ -186,7 +185,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                               ),
                         ),
@@ -201,7 +200,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                         'aa3n3ddf' /* Destination */,
                       ),
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            font: GoogleFonts.lexendDeca(),
+                            fontFamily: 'Lexend Deca',
                             color: FlutterFlowTheme.of(context).gray600,
                             fontSize: 12.0,
                             letterSpacing: 0.0,
@@ -220,7 +219,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                       ),
                       style:
                           FlutterFlowTheme.of(context).headlineMedium.override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                               ),
                     ),
@@ -252,43 +251,24 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                   PageTransition(
                                     type: PageTransitionType.fade,
                                     child: FlutterFlowExpandedImageView(
-                                      image: CachedNetworkImage(
-                                        fadeInDuration:
-                                            Duration(milliseconds: 500),
-                                        fadeOutDuration:
-                                            Duration(milliseconds: 500),
-                                        imageUrl: valueOrDefault<String>(
-                                          widget!.propertyRef?.mainImage,
-                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/st1jx3t60926/r-architecture-TRCJ-87Yoh0-unsplash.jpg',
-                                        ),
+                                      image: Image.asset(
+                                        'assets/images/IMG-20241226-WA0148.jpg',
                                         fit: BoxFit.contain,
                                       ),
                                       allowRotation: false,
-                                      tag: valueOrDefault<String>(
-                                        widget!.propertyRef?.mainImage,
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/st1jx3t60926/r-architecture-TRCJ-87Yoh0-unsplash.jpg',
-                                      ),
+                                      tag: 'imageTag1',
                                       useHeroAnimation: true,
                                     ),
                                   ),
                                 );
                               },
                               child: Hero(
-                                tag: valueOrDefault<String>(
-                                  widget!.propertyRef?.mainImage,
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/st1jx3t60926/r-architecture-TRCJ-87Yoh0-unsplash.jpg',
-                                ),
+                                tag: 'imageTag1',
                                 transitionOnUserGestures: true,
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(16.0),
-                                  child: CachedNetworkImage(
-                                    fadeInDuration: Duration(milliseconds: 500),
-                                    fadeOutDuration:
-                                        Duration(milliseconds: 500),
-                                    imageUrl: valueOrDefault<String>(
-                                      widget!.propertyRef?.mainImage,
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/st1jx3t60926/r-architecture-TRCJ-87Yoh0-unsplash.jpg',
-                                    ),
+                                  child: Image.asset(
+                                    'assets/images/IMG-20241226-WA0148.jpg',
                                     width: double.infinity,
                                     height: double.infinity,
                                     fit: BoxFit.cover,
@@ -308,7 +288,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                       widget!.propertyRef!.propertyName,
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                               ),
                     ),
@@ -343,7 +323,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                             widget!.propertyRef!.propertyAddress,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -375,7 +355,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: FlutterFlowTheme.of(context).gray600,
                                     fontSize: 12.0,
                                     letterSpacing: 0.0,
@@ -399,7 +379,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -411,12 +391,12 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                 widget!.tripRef!.tripTotal,
                                 formatType: FormatType.decimal,
                                 decimalType: DecimalType.automatic,
-                                currency: '\$',
+                                currency: 'FCFA',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -437,7 +417,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -446,12 +426,12 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'xq1wp9gf' /* $24.20 */,
+                                'xq1wp9gf' /* FCFA24.20 */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -472,7 +452,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.lexendDeca(),
+                                    fontFamily: 'Lexend Deca',
                                     color: Color(0xFF8B97A2),
                                     fontSize: 14.0,
                                     letterSpacing: 0.0,
@@ -481,12 +461,12 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                             ),
                             Text(
                               FFLocalizations.of(context).getText(
-                                'ezq1xrmj' /* $40.00 */,
+                                '9kuihpin' /* FCFA40.00 */,
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -510,7 +490,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 20.0,
                                         letterSpacing: 0.0,
@@ -554,12 +534,12 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                 widget!.tripRef!.tripTotal,
                                 formatType: FormatType.decimal,
                                 decimalType: DecimalType.automatic,
-                                currency: '\$',
+                                currency: 'FCFA',
                               ),
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -583,7 +563,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .titleMedium
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -616,7 +596,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Colors.white,
                                       fontSize: 16.0,
                                       letterSpacing: 0.0,
@@ -703,7 +683,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: Color(0xFF8B97A2),
                                         fontSize: 14.0,
                                         letterSpacing: 0.0,
@@ -741,7 +721,7 @@ class _TripDetailsHOSTWidgetState extends State<TripDetailsHOSTWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
-                                              font: GoogleFonts.urbanist(),
+                                              fontFamily: 'Urbanist',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,

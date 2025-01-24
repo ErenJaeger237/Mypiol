@@ -149,7 +149,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                         textAlign: TextAlign.start,
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                 ),
                       ),
@@ -170,7 +170,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                           textAlign: TextAlign.start,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                         ),
@@ -194,7 +194,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                             textAlign: TextAlign.start,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                           ),
@@ -232,7 +232,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                       ),
                       hintStyle:
                           FlutterFlowTheme.of(context).bodyMedium.override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                               ),
                       enabledBorder: OutlineInputBorder(
@@ -265,7 +265,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                       ),
                     ),
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          font: GoogleFonts.urbanist(),
+                          fontFamily: 'Urbanist',
                           letterSpacing: 0.0,
                         ),
                     maxLines: 4,
@@ -318,7 +318,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).tertiary,
                                   letterSpacing: 0.0,
                                 ),
@@ -342,7 +342,7 @@ class _ReviewTripWidgetState extends State<ReviewTripWidget>
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle:
                           FlutterFlowTheme.of(context).headlineSmall.override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).tertiary,
                                 letterSpacing: 0.0,
                               ),

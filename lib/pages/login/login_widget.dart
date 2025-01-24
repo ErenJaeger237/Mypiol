@@ -159,7 +159,7 @@ class _LoginWidgetState extends State<LoginWidget>
                               style: FlutterFlowTheme.of(context)
                                   .displaySmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                             ),
@@ -221,7 +221,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.urbanist(),
+                                            fontFamily: 'Urbanist',
                                             letterSpacing: 0.0,
                                           ),
                                       hintText:
@@ -231,7 +231,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.urbanist(),
+                                            fontFamily: 'Urbanist',
                                             letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
@@ -277,7 +277,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: GoogleFonts.urbanist(),
+                                          fontFamily: 'Urbanist',
                                           letterSpacing: 0.0,
                                         ),
                                     validator: _model
@@ -310,7 +310,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   hintText: FFLocalizations.of(context).getText(
@@ -319,7 +319,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         letterSpacing: 0.0,
                                       ),
                                   enabledBorder: OutlineInputBorder(
@@ -375,7 +375,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                                 validator: _model
@@ -411,7 +411,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                                 elevation: 0.0,
@@ -456,7 +456,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: Colors.white,
                                         fontSize: 18.0,
                                         letterSpacing: 0.0,
@@ -492,7 +492,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color:
                                           FlutterFlowTheme.of(context).grayIcon,
                                       fontSize: 14.0,
@@ -528,7 +528,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Color(0xFF39D2C0),
                                       fontSize: 14.0,
                                       letterSpacing: 0.0,
@@ -585,7 +585,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                     style: FlutterFlowTheme.of(context)
                                         .labelMedium
                                         .override(
-                                          font: GoogleFonts.poppins(),
+                                          fontFamily: 'Poppins',
                                           letterSpacing: 0.0,
                                         ),
                                   ),
@@ -629,7 +629,7 @@ class _LoginWidgetState extends State<LoginWidget>
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color:
                                       FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,

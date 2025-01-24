@@ -140,7 +140,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                 'nk2l4o2a' /* Reviews */,
               ),
               style: FlutterFlowTheme.of(context).headlineSmall.override(
-                    font: GoogleFonts.urbanist(),
+                    fontFamily: 'Urbanist',
                     letterSpacing: 0.0,
                   ),
             ),
@@ -193,7 +193,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
-                                        font: GoogleFonts.lexendDeca(),
+                                        fontFamily: 'Lexend Deca',
                                         color: FlutterFlowTheme.of(context)
                                             .primaryText,
                                         fontSize: 28.0,
@@ -209,7 +209,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Color(0xFF95A1AC),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -235,7 +235,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall
                                           .override(
-                                            font: GoogleFonts.lexendDeca(),
+                                            fontFamily: 'Lexend Deca',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
                                             fontSize: 28.0,
@@ -262,7 +262,7 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                 style: FlutterFlowTheme.of(context)
                                     .bodySmall
                                     .override(
-                                      font: GoogleFonts.lexendDeca(),
+                                      fontFamily: 'Lexend Deca',
                                       color: Color(0xFF8B97A2),
                                       fontSize: 12.0,
                                       letterSpacing: 0.0,
@@ -378,19 +378,52 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      Text(
-                                                        columnUsersRecord
-                                                            .displayName,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                      StreamBuilder<
+                                                          UsersRecord>(
+                                                        stream: UsersRecord
+                                                            .getDocument(
+                                                                listViewReviewsRecord
+                                                                    .userRef!),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child: SizedBox(
+                                                                width: 50.0,
+                                                                height: 50.0,
+                                                                child:
+                                                                    CircularProgressIndicator(
+                                                                  valueColor:
+                                                                      AlwaysStoppedAnimation<
+                                                                          Color>(
+                                                                    FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            );
+                                                          }
+
+                                                          final textUsersRecord =
+                                                              snapshot.data!;
+
+                                                          return Text(
+                                                            columnUsersRecord
+                                                                .uid,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .urbanist(),
+                                                                  fontFamily:
+                                                                      'Urbanist',
                                                                   letterSpacing:
                                                                       0.0,
                                                                 ),
+                                                          );
+                                                        },
                                                       ),
                                                       Padding(
                                                         padding:
@@ -435,31 +468,77 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                                   child: Padding(
                                                     padding:
                                                         EdgeInsets.all(2.0),
-                                                    child: Container(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      clipBehavior:
-                                                          Clip.antiAlias,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
+                                                    child: StreamBuilder<
+                                                        List<UsersRecord>>(
+                                                      stream: queryUsersRecord(
+                                                        singleRecord: true,
                                                       ),
-                                                      child: CachedNetworkImage(
-                                                        fadeInDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    500),
-                                                        fadeOutDuration:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    500),
-                                                        imageUrl:
-                                                            valueOrDefault<
-                                                                String>(
-                                                          columnUsersRecord
-                                                              .photoUrl,
-                                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/o27rwq7xt6hp/user_1.4@2x.jpg',
-                                                        ),
-                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child: SizedBox(
+                                                              width: 50.0,
+                                                              height: 50.0,
+                                                              child:
+                                                                  CircularProgressIndicator(
+                                                                valueColor:
+                                                                    AlwaysStoppedAnimation<
+                                                                        Color>(
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          );
+                                                        }
+                                                        List<UsersRecord>
+                                                            circleImageUsersRecordList =
+                                                            snapshot.data!;
+                                                        // Return an empty Container when the item does not exist.
+                                                        if (snapshot
+                                                            .data!.isEmpty) {
+                                                          return Container();
+                                                        }
+                                                        final circleImageUsersRecord =
+                                                            circleImageUsersRecordList
+                                                                    .isNotEmpty
+                                                                ? circleImageUsersRecordList
+                                                                    .first
+                                                                : null;
+
+                                                        return Container(
+                                                          width: 50.0,
+                                                          height: 50.0,
+                                                          clipBehavior:
+                                                              Clip.antiAlias,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                          ),
+                                                          child:
+                                                              CachedNetworkImage(
+                                                            fadeInDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            fadeOutDuration:
+                                                                Duration(
+                                                                    milliseconds:
+                                                                        500),
+                                                            imageUrl:
+                                                                valueOrDefault<
+                                                                    String>(
+                                                              columnUsersRecord
+                                                                  .photoUrl,
+                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/o27rwq7xt6hp/user_1.4@2x.jpg',
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
                                                     ),
                                                   ),
                                                 ),
@@ -474,17 +553,62 @@ class _PropertyReviewWidgetState extends State<PropertyReviewWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Expanded(
-                                                  child: Text(
-                                                    listViewReviewsRecord
-                                                        .ratingDescription,
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .urbanist(),
-                                                          letterSpacing: 0.0,
-                                                        ),
+                                                  child: StreamBuilder<
+                                                      List<ReviewsRecord>>(
+                                                    stream: queryReviewsRecord(
+                                                      singleRecord: true,
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child: SizedBox(
+                                                            width: 50.0,
+                                                            height: 50.0,
+                                                            child:
+                                                                CircularProgressIndicator(
+                                                              valueColor:
+                                                                  AlwaysStoppedAnimation<
+                                                                      Color>(
+                                                                FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      }
+                                                      List<ReviewsRecord>
+                                                          textReviewsRecordList =
+                                                          snapshot.data!;
+                                                      // Return an empty Container when the item does not exist.
+                                                      if (snapshot
+                                                          .data!.isEmpty) {
+                                                        return Container();
+                                                      }
+                                                      final textReviewsRecord =
+                                                          textReviewsRecordList
+                                                                  .isNotEmpty
+                                                              ? textReviewsRecordList
+                                                                  .first
+                                                              : null;
+
+                                                      return Text(
+                                                        listViewReviewsRecord
+                                                            .ratingDescription,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Urbanist',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
+                                                      );
+                                                    },
                                                   ),
                                                 ),
                                               ],

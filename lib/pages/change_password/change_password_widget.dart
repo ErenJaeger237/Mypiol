@@ -74,7 +74,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
             '5zt50yep' /* Change Password */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 letterSpacing: 0.0,
               ),
         ),
@@ -98,14 +98,14 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                     '9lzqnpfu' /* Email Address */,
                   ),
                   labelStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         letterSpacing: 0.0,
                       ),
                   hintText: FFLocalizations.of(context).getText(
                     'fv637y90' /* Your email.. */,
                   ),
                   hintStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         letterSpacing: 0.0,
                       ),
                   enabledBorder: OutlineInputBorder(
@@ -142,7 +142,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                       EdgeInsetsDirectional.fromSTEB(20.0, 24.0, 0.0, 24.0),
                 ),
                 style: FlutterFlowTheme.of(context).titleSmall.override(
-                      font: GoogleFonts.urbanist(),
+                      fontFamily: 'Urbanist',
                       letterSpacing: 0.0,
                     ),
                 validator: _model.emailAddressTextControllerValidator
@@ -160,7 +160,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         'hl42jo2h' /* We will send you an email with... */,
                       ),
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            font: GoogleFonts.urbanist(),
+                            fontFamily: 'Urbanist',
                             letterSpacing: 0.0,
                           ),
                     ),
@@ -201,7 +201,7 @@ class _ChangePasswordWidgetState extends State<ChangePasswordWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: Color(0xFFFF8806),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.lexendDeca(),
+                          fontFamily: 'Lexend Deca',
                           color: Colors.white,
                           fontSize: 16.0,
                           letterSpacing: 0.0,

@@ -16,6 +16,8 @@ import 'create_property1_model.dart';
 export 'create_property1_model.dart';
 
 class CreateProperty1Widget extends StatefulWidget {
+  /// i want that when a user enters a property name it shoul appear on all
+  /// pages with the field name property name
   const CreateProperty1Widget({super.key});
 
   @override
@@ -32,8 +34,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
     super.initState();
     _model = createModel(context, () => CreateProperty1Model());
 
-    _model.propertyNameTextController ??= TextEditingController(
-        text: (_model.propertyNameFocusNode?.hasFocus ?? false).toString());
+    _model.propertyNameTextController ??= TextEditingController();
     _model.propertyNameFocusNode ??= FocusNode();
 
     _model.propertyAddressTextController ??= TextEditingController();
@@ -82,7 +83,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
             '3xac5xvp' /* Create Property */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 letterSpacing: 0.0,
               ),
         ),
@@ -120,7 +121,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
-                          safeSetState(() => _model.isDataUploading = true);
+                          safeSetState(() => _model.isDataUploading1 = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
 
                           var downloadUrls = <String>[];
@@ -151,15 +152,15 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                 .toList();
                           } finally {
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
-                            _model.isDataUploading = false;
+                            _model.isDataUploading1 = false;
                           }
                           if (selectedUploadedFiles.length ==
                                   selectedMedia.length &&
                               downloadUrls.length == selectedMedia.length) {
                             safeSetState(() {
-                              _model.uploadedLocalFile =
+                              _model.uploadedLocalFile1 =
                                   selectedUploadedFiles.first;
-                              _model.uploadedFileUrl = downloadUrls.first;
+                              _model.uploadedFileUrl1 = downloadUrls.first;
                             });
                             showUploadMessage(context, 'Success!');
                           } else {
@@ -183,16 +184,8 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           builder: (context, snapshot) {
                             // Customize what your widget looks like when it's loading.
                             if (!snapshot.hasData) {
-                              return Center(
-                                child: SizedBox(
-                                  width: 50.0,
-                                  height: 50.0,
-                                  child: CircularProgressIndicator(
-                                    valueColor: AlwaysStoppedAnimation<Color>(
-                                      FlutterFlowTheme.of(context).primary,
-                                    ),
-                                  ),
-                                ),
+                              return Image.asset(
+                                'projects/my-piol-cedckq/assets/6dat2446huss/IMG-20241226-WA0148.jpg',
                               );
                             }
                             List<PropertiesRecord> imagePropertiesRecordList =
@@ -206,18 +199,67 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                     ? imagePropertiesRecordList.first
                                     : null;
 
-                            return ClipRRect(
-                              borderRadius: BorderRadius.circular(16.0),
-                              child: CachedNetworkImage(
-                                fadeInDuration: Duration(milliseconds: 500),
-                                fadeOutDuration: Duration(milliseconds: 500),
-                                imageUrl: valueOrDefault<String>(
-                                  _model.uploadedFileUrl,
-                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/lhbo8hbkycdw/addCoverImage@2x.png',
+                            return InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                final selectedMedia =
+                                    await selectMediaWithSourceBottomSheet(
+                                  context: context,
+                                  allowPhoto: true,
+                                  backgroundColor:
+                                      FlutterFlowTheme.of(context).tertiary,
+                                );
+                                if (selectedMedia != null &&
+                                    selectedMedia.every((m) =>
+                                        validateFileFormat(
+                                            m.storagePath, context))) {
+                                  safeSetState(
+                                      () => _model.isDataUploading2 = true);
+                                  var selectedUploadedFiles =
+                                      <FFUploadedFile>[];
+
+                                  try {
+                                    selectedUploadedFiles = selectedMedia
+                                        .map((m) => FFUploadedFile(
+                                              name:
+                                                  m.storagePath.split('/').last,
+                                              bytes: m.bytes,
+                                              height: m.dimensions?.height,
+                                              width: m.dimensions?.width,
+                                              blurHash: m.blurHash,
+                                            ))
+                                        .toList();
+                                  } finally {
+                                    _model.isDataUploading2 = false;
+                                  }
+                                  if (selectedUploadedFiles.length ==
+                                      selectedMedia.length) {
+                                    safeSetState(() {
+                                      _model.uploadedLocalFile2 =
+                                          selectedUploadedFiles.first;
+                                    });
+                                  } else {
+                                    safeSetState(() {});
+                                    return;
+                                  }
+                                }
+                              },
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(16.0),
+                                child: CachedNetworkImage(
+                                  fadeInDuration: Duration(milliseconds: 500),
+                                  fadeOutDuration: Duration(milliseconds: 500),
+                                  imageUrl: valueOrDefault<String>(
+                                    _model.uploadedFileUrl1,
+                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sample-app-property-finder-834ebu/assets/lhbo8hbkycdw/addCoverImage@2x.png',
+                                  ),
+                                  width: double.infinity,
+                                  height: 180.0,
+                                  fit: BoxFit.cover,
                                 ),
-                                width: double.infinity,
-                                height: 180.0,
-                                fit: BoxFit.cover,
                               ),
                             );
                           },
@@ -237,7 +279,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -255,12 +297,12 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         obscureText: false,
                         decoration: InputDecoration(
                           hintText: FFLocalizations.of(context).getText(
-                            'tnbghi08' /* HOW IS IT CALLED */,
+                            'vj4u5zbb' /* The Quater */,
                           ),
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color:
                                     FlutterFlowTheme.of(context).secondaryText,
                                 letterSpacing: 0.0,
@@ -311,7 +353,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         style: FlutterFlowTheme.of(context)
                             .headlineMedium
                             .override(
-                              font: GoogleFonts.urbanist(),
+                              fontFamily: 'Urbanist',
                               letterSpacing: 0.0,
                             ),
                         validator: _model.propertyNameTextControllerValidator
@@ -331,7 +373,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -354,7 +396,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
@@ -404,7 +446,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                 ),
                         validator: _model.propertyAddressTextControllerValidator
@@ -424,7 +466,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -447,7 +489,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           hintStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).grayIcon,
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w300,
@@ -497,7 +539,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                         ),
                         style:
                             FlutterFlowTheme.of(context).headlineSmall.override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   letterSpacing: 0.0,
                                 ),
                         validator: _model
@@ -518,7 +560,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .override(
-                                  font: GoogleFonts.urbanist(),
+                                  fontFamily: 'Urbanist',
                                   color: FlutterFlowTheme.of(context).gray600,
                                   letterSpacing: 0.0,
                                   fontWeight: FontWeight.w500,
@@ -540,7 +582,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                           ),
                           hintStyle:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     letterSpacing: 0.0,
                                   ),
                           enabledBorder: UnderlineInputBorder(
@@ -587,7 +629,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                               0.0, 24.0, 0.0, 24.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              font: GoogleFonts.urbanist(),
+                              fontFamily: 'Urbanist',
                               letterSpacing: 0.0,
                             ),
                         maxLines: 4,
@@ -614,7 +656,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -625,7 +667,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineMedium
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       letterSpacing: 0.0,
                                     ),
                               ),
@@ -641,7 +683,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                     _model.propertyNameTextController.text,
                                 propertyDescription: _model
                                     .propertyDescriptionTextController.text,
-                                mainImage: _model.uploadedFileUrl,
+                                mainImage: _model.uploadedFileUrl1,
                                 propertyAddress:
                                     _model.propertyAddressTextController.text,
                                 isDraft: true,
@@ -658,7 +700,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                                         propertyDescription: _model
                                             .propertyDescriptionTextController
                                             .text,
-                                        mainImage: _model.uploadedFileUrl,
+                                        mainImage: _model.uploadedFileUrl1,
                                         propertyAddress: _model
                                             .propertyAddressTextController.text,
                                         isDraft: true,
@@ -754,7 +796,7 @@ class _CreateProperty1WidgetState extends State<CreateProperty1Widget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.urbanist(),
+                                    fontFamily: 'Urbanist',
                                     color: Colors.white,
                                     letterSpacing: 0.0,
                                   ),

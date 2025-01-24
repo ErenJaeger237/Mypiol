@@ -84,7 +84,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                     'q6cmjvox' /* Order Total */,
                   ),
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         color: FlutterFlowTheme.of(context).dark600,
                         letterSpacing: 0.0,
                       ),
@@ -97,7 +97,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                     'o8wn4y0a' /* Your order total is a summary ... */,
                   ),
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        font: GoogleFonts.urbanist(),
+                        fontFamily: 'Urbanist',
                         fontSize: 16.0,
                         letterSpacing: 0.0,
                         fontWeight: FontWeight.w300,
@@ -121,7 +121,7 @@ class _TotalWidgetState extends State<TotalWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                     color: FlutterFlowTheme.of(context).cultured,
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                          font: GoogleFonts.urbanist(),
+                          fontFamily: 'Urbanist',
                           color: FlutterFlowTheme.of(context).primary,
                           letterSpacing: 0.0,
                         ),

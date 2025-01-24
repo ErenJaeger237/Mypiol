@@ -93,7 +93,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                           style: FlutterFlowTheme.of(context)
                               .displaySmall
                               .override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 color: FlutterFlowTheme.of(context).tertiary,
                                 letterSpacing: 0.0,
                               ),
@@ -131,7 +131,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.urbanist(),
+                                        fontFamily: 'Urbanist',
                                         color: FlutterFlowTheme.of(context)
                                             .grayIcon,
                                         letterSpacing: 0.0,
@@ -173,7 +173,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       color:
                                           FlutterFlowTheme.of(context).tertiary,
                                       letterSpacing: 0.0,
@@ -212,7 +212,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
-                                      font: GoogleFonts.urbanist(),
+                                      fontFamily: 'Urbanist',
                                       color: Colors.white,
                                       letterSpacing: 0.0,
                                     ),
@@ -342,7 +342,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineSmall
                                               .override(
-                                                font: GoogleFonts.urbanist(),
+                                                fontFamily: 'Urbanist',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -367,7 +367,7 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
-                                                font: GoogleFonts.urbanist(),
+                                                fontFamily: 'Urbanist',
                                                 letterSpacing: 0.0,
                                               ),
                                         ),
@@ -430,8 +430,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .urbanist(),
+                                                          fontFamily:
+                                                              'Urbanist',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),
@@ -448,8 +448,8 @@ class _HomePageMAINWidgetState extends State<HomePageMAINWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .urbanist(),
+                                                          fontFamily:
+                                                              'Urbanist',
                                                           letterSpacing: 0.0,
                                                         ),
                                               ),

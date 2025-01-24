@@ -57,10 +57,10 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
         automaticallyImplyLeading: false,
         title: Text(
           FFLocalizations.of(context).getText(
-            'b2qhbidd' /* My Trips */,
+            'b2qhbidd' /* My Oders */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
-                font: GoogleFonts.urbanist(),
+                fontFamily: 'Urbanist',
                 color: FlutterFlowTheme.of(context).tertiary,
                 letterSpacing: 0.0,
                 fontWeight: FontWeight.bold,
@@ -86,7 +86,7 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                           FlutterFlowTheme.of(context).grayIcon,
                       labelStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
-                                font: GoogleFonts.urbanist(),
+                                fontFamily: 'Urbanist',
                                 letterSpacing: 0.0,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -386,8 +386,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -408,8 +408,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -433,8 +433,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -476,8 +476,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                       .of(context)
                                                                   .bodySmall
                                                                   .override(
-                                                                    font: GoogleFonts
-                                                                        .lexendDeca(),
+                                                                    fontFamily:
+                                                                        'Lexend Deca',
                                                                     color: FlutterFlowTheme.of(
                                                                             context)
                                                                         .grayIcon,
@@ -503,8 +503,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -543,8 +543,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                     .of(context)
                                                                 .bodyMedium
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .lexendDeca(),
+                                                                  fontFamily:
+                                                                      'Lexend Deca',
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .grayIcon,
@@ -777,8 +777,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                         context)
                                                                     .bodyMedium
                                                                     .override(
-                                                                      font: GoogleFonts
-                                                                          .urbanist(),
+                                                                      fontFamily:
+                                                                          'Urbanist',
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .tertiary,
@@ -816,8 +816,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -838,8 +838,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -863,8 +863,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .headlineSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .darkText,
@@ -906,8 +906,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                   .of(context)
                                                               .titleMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .urbanist(),
+                                                                fontFamily:
+                                                                    'Urbanist',
                                                                 letterSpacing:
                                                                     0.0,
                                                               ),
@@ -982,8 +982,8 @@ class _MyTripsWidgetState extends State<MyTripsWidget>
                                                                           context)
                                                                       .titleSmall
                                                                       .override(
-                                                                        font: GoogleFonts
-                                                                            .urbanist(),
+                                                                        fontFamily:
+                                                                            'Urbanist',
                                                                         color: Colors
                                                                             .white,
                                                                         letterSpacing:

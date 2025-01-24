@@ -5,13 +5,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'dart:ui';
-import 'my_bookings_widget.dart' show MyBookingsWidget;
+import 'my_oder_widget.dart' show MyOderWidget;
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MyBookingsModel extends FlutterFlowModel<MyBookingsWidget> {
+class MyOderModel extends FlutterFlowModel<MyOderWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TabBar widget.
